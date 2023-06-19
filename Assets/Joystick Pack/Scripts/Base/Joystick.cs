@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -33,6 +32,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
+
+    public event UnityAction PointUp;
+    public event UnityAction PointDown;
+
+
     private RectTransform baseRect = null;
 
     private Canvas canvas;
@@ -60,6 +64,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+
+        PointDown?.Invoke();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -131,8 +137,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        PointUp?.Invoke();
+
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
+
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)

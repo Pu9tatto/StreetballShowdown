@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -19,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector2 _direction;
     private bool _isJumping;
+    private bool _isDribble;
 
     private void Awake()
     {
@@ -38,12 +38,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void PickBall()
     {
+        _isDribble = true;
         DribbleChanged?.Invoke(true);
+    }
+
+    public void ThrowBall()
+    {
+        _isDribble = false;
+        DribbleChanged?.Invoke(false);
     }
 
     public void TryJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
+        if (Input.GetKeyDown(KeyCode.Space) && !_isJumping && _isDribble)
         {
             Vector3 startPosition = transform.position;
 
@@ -74,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = startPosition;
-        DribbleChanged?.Invoke(false);
 
         _isJumping = false;
     }
@@ -97,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
             Vector3 rotateDirection = _rigidbody.velocity;
             rotateDirection.y = 0;
 
-            transform.rotation = Quaternion.LookRotation(rotateDirection);
+            if(rotateDirection.x != 0)
+                transform.rotation = Quaternion.LookRotation(rotateDirection);
         }
     }
 }

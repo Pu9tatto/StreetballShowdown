@@ -5,6 +5,8 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class Ball : MonoBehaviour
 {
+    [SerializeField] private float _throwBounced;
+
     private float[] _dribblePoints = new float[2];
     private int currentWaypointIndex = 0;
     private float _dribbleDuration;
@@ -34,27 +36,28 @@ public class Ball : MonoBehaviour
         StartState(PatrolCoroutine());
     }
 
-    public void StartThrow(Transform goalPoint, float height, float duration)
+    public void StartThrow(BasketPoint endPoint, float height, float speed)
     {
         Vector3 startPoint = transform.position;
-        StartState(ThrowCoroutin(startPoint, goalPoint, height, duration));
+        StartState(ThrowCoroutin(startPoint, endPoint.transform.position, height, speed));
     }
+
     private void MakeNonKinematic()
     {
         _rigidbody.isKinematic = false;
         _collider.enabled = true;
     }
 
-    private IEnumerator ThrowCoroutin(Vector3 startPoint, Transform goalPoint, float height, float duration)
+    private IEnumerator ThrowCoroutin(Vector3 startPoint, Vector3 endPoint, float height, float speed)
     {
         float currentMoveProgress = 0.0f;
         float maxMoveProgress = 1.0f;
 
         while (currentMoveProgress < maxMoveProgress)
         {
-            currentMoveProgress += Time.deltaTime / duration;
+            currentMoveProgress += Time.deltaTime * speed;
 
-            Vector3 position = CalculateParabolicPosition(startPoint, goalPoint.position, height, currentMoveProgress);
+            Vector3 position = CalculateParabolicPosition(startPoint, endPoint, height, currentMoveProgress);
 
             transform.position = position;
 
@@ -62,6 +65,10 @@ public class Ball : MonoBehaviour
         }
 
         MakeNonKinematic();
+
+        Vector3 throwDirection = (endPoint - startPoint) * _throwBounced;
+
+        _rigidbody.velocity = throwDirection;
     }
 
     private IEnumerator PatrolCoroutine()
