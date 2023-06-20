@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BallThrower))]
+[RequireComponent(typeof(PlayerBallThrower))]
 public class InputReader : MonoBehaviour, IControllable 
 {
     [SerializeField] private FixedJoystick _joystick;  

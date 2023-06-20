@@ -3,7 +3,7 @@ using UnityEngine;
 public class ThrowTransit : Transition
 {
     [SerializeField] private FixedJoystick _joystick;
-    [SerializeField] private BallThrower _ballThrower;
+    [SerializeField] private PlayerBallThrower _ballThrower;
 
     protected override void OnEnable()
     {

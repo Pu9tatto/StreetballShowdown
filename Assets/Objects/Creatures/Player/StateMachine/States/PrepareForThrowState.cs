@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PrepareForThrowState : State
 {
     [SerializeField] private PowerSlider _powerSlider;
-    [SerializeField] private BallThrower _ballThrower;
+    [SerializeField] private PlayerBallThrower _ballThrower;
 
     private Slider _slider;
 

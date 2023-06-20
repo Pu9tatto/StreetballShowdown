@@ -1155,7 +1155,8 @@ GameObject:
   - component: {fileID: 3877048640052707076}
   - component: {fileID: 3877048640062509260}
   - component: {fileID: 3877048640053125999}
-  - component: {fileID: 3877048640053125985}
+  - component: {fileID: 4825296517436531219}
+  - component: {fileID: 4417973446191222211}
   - component: {fileID: 3877048640053125997}
   - component: {fileID: 3877048640053125975}
   - component: {fileID: 3877048640053125973}
@@ -1169,7 +1170,6 @@ GameObject:
   - component: {fileID: 3877048640053125979}
   - component: {fileID: 3877048640053125969}
   - component: {fileID: 3877048640053125983}
-  - component: {fileID: 3877048640053125972}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1237,8 +1237,8 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &3877048640053125985
-CapsuleCollider:
+--- !u!143 &4825296517436531219
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1247,10 +1247,26 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  serializedVersion: 2
   m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4417973446191222211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877048640053125988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca126a3fd72cee24da9d7dba19c4d55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3877048640053125997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,9 +1345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7a78e1081165f4c916d39fea16946d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125970}
-  Animator: {fileID: 3877048640062509260}
   _speed: 6
 --- !u!114 &3877048640053125970
 MonoBehaviour:
@@ -1362,9 +1378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3276458b643bf45a75c071a9609d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125980}
-  Animator: {fileID: 3877048640062509260}
   _speed: 5
 --- !u!114 &3877048640053125980
 MonoBehaviour:
@@ -1392,9 +1408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6a2ce69262d0a4e9cda085a4528f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125977}
-  Animator: {fileID: 3877048640062509260}
 --- !u!114 &3877048640053125977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,9 +1437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0a73c064047ff4daf2abd12765c225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125979}
-  Animator: {fileID: 3877048640062509260}
   _powerSlider: {fileID: 0}
   _ballThrower: {fileID: 3877048640053125975}
 --- !u!114 &3877048640053125979
@@ -1453,9 +1469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5a11f1dc12e2b4288fc2b2f0b802bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125983}
-  Animator: {fileID: 3877048640062509260}
   _ballThrower: {fileID: 3877048640053125975}
   _jumpHeight: 1
   _jumpDuration: 1.36
@@ -1473,21 +1489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 3877048640053125974}
---- !u!114 &3877048640053125972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877048640053125988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!1 &3877048640053125990
 GameObject:
   m_ObjectHideFlags: 0

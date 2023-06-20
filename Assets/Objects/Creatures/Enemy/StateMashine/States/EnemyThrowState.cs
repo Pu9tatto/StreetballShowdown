@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class ThrowState : State
+public class EnemyThrowState : State
 {
-    [SerializeField] private PlayerBallThrower _ballThrower;
+    [SerializeField] private BallThrower _ballThrower;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _jumpDuration;
     [SerializeField] private MoveTransit _moveTransit;
@@ -44,4 +44,5 @@ public class ThrowState : State
         transform.position = startPosition;
         _moveTransit?.Transit();
     }
+
 }

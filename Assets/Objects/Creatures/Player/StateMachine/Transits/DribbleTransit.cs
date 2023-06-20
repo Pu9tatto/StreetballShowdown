@@ -5,8 +5,9 @@ public class DribbleTransit : Transition
 {
     [SerializeField] private Transform _pointInHand;
     [SerializeField] private Transform _pointInFall;
-    [SerializeField] private float _dribbleDuration = 0.5f;
-    [SerializeField] private BallThrower _ballThrower;
+    [SerializeField] private float _dribbleDuration = 0.17833f;
+
+    private BallThrower _ballThrower;
 
     private int _halfHeightFactor = 2;
 
@@ -21,7 +22,7 @@ public class DribbleTransit : Transition
         {
             PickBall(ball);
             _ballThrower.SetBall(ball);
-            NeedTransit = true; 
+            NeedTransit = true;
         }
     }
 

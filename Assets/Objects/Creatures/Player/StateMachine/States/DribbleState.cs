@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CreatureMovement))]
 public class DribbleState : State
 {
     [SerializeField] private float _speed;
@@ -8,12 +9,12 @@ public class DribbleState : State
     private readonly int _isDribbleKey = Animator.StringToHash("IsDribble");
 
     private IControllable _controller;
-    private Rigidbody _rigidbody;
+    private CreatureMovement _movement;
     private Vector2 _direction;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _movement = GetComponent<CreatureMovement>();
         _controller = GetComponent<IControllable>();
     }
 
@@ -22,11 +23,10 @@ public class DribbleState : State
         Animator?.SetBool(_isDribbleKey, true);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         SetDirection();
-        TryRotate();
-        Move();
+        _movement.Move(_direction, _speed);
     }
 
     private void SetDirection()
@@ -34,22 +34,5 @@ public class DribbleState : State
         _direction = _controller.GetDirection();
 
         Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
-    }
-
-    private void Move()
-    {
-        _rigidbody.velocity = new Vector3(_direction.x * _speed, 0, _direction.y * _speed);
-    }
-
-    private void TryRotate()
-    {
-        if (_direction.x != 0 || _direction.y != 0)
-        {
-            Vector3 rotateDirection = _rigidbody.velocity;
-            rotateDirection.y = 0;
-
-            if (rotateDirection.x != 0)
-                transform.rotation = Quaternion.LookRotation(rotateDirection);
-        }
     }
 }
