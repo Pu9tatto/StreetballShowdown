@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class State : MonoBehaviour
 {
-    [SerializeField] private List<Transition> transitions;
     [SerializeField] protected Animator Animator;
+    [SerializeField] private List<Transition> transitions;
 
     public void Enter()
     {
