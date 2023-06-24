@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206042885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.015, y: 9.939, z: 0.412}
+  m_LocalPosition: {x: 1, y: 10, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643389576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.026, y: 9.919, z: 0.302}
+  m_LocalPosition: {x: -1, y: 10, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -306,7 +306,7 @@ BoxCollider:
   m_GameObject: {fileID: 779025528}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.74657756, y: 9.674508, z: 0.7739216}
   m_Center: {x: -0.012295856, y: -2.5657606, z: 0.041000545}
@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840972184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.045, y: 10.065, z: 2.456}
+  m_LocalPosition: {x: -0.045, y: 9.782, z: 2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918622231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.797, z: 2.021}
+  m_LocalPosition: {x: 0, y: 9.797, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -400,9 +400,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.1
-  m_Height: 1.2
+  m_Height: 1.4999999
   m_Direction: 2
-  m_Center: {x: -0.85, y: 0, z: -0.7}
+  m_Center: {x: -0.9, y: 0, z: -0.8}
 --- !u!136 &918622234
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -414,9 +414,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.1
-  m_Height: 1.2
+  m_Height: 1.4999999
   m_Direction: 2
-  m_Center: {x: 0.85, y: 0, z: -0.7}
+  m_Center: {x: 0.9, y: 0, z: -0.8}
 --- !u!136 &918622235
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -427,10 +427,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 13107a0625308924e9f114f5c09c102a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.8
+  m_Radius: 0.2
+  m_Height: 1.5
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: -1.7}
+  m_Center: {x: 0, y: 0, z: -1.8}
 --- !u!136 &918622236
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -444,7 +444,7 @@ CapsuleCollider:
   m_Radius: 0.1
   m_Height: 1.5
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &1047861130
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +719,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1813817817941301892}
   - component: {fileID: 2037877730}
+  - component: {fileID: 2037877733}
+  - component: {fileID: 2037877732}
+  - component: {fileID: 2037877736}
   m_Layer: 0
   m_Name: GoalPoint
   m_TagString: Untagged
@@ -734,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4397494179242408317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.087, y: 9.909, z: 1.465}
+  m_LocalPosition: {x: 0, y: 10.017, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -753,6 +756,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7888883aac4c24dbbaa7859a4c7da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &2037877733
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397494179242408317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: -1, z: 0}
+--- !u!114 &2037877732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397494179242408317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cad3f68e3cc0d844a29919218784e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _freePointZoneDistance: 6.75
+  _scoreWidget: {fileID: 0}
+  _delay: 1
+  _goalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2037877736}
+        m_TargetAssemblyTypeName: FreeKick, Assembly-CSharp
+        m_MethodName: TransformBallToFreeKickPoint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2037877736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397494179242408317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872754e3ef05d174e808e35a46dd7cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _freeKickPoints2Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _freeKickPoints3Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8743500490834557795
 GameObject:
   m_ObjectHideFlags: 0

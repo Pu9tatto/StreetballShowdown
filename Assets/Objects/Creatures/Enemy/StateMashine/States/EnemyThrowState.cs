@@ -7,17 +7,10 @@ public class EnemyThrowState : State
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _jumpDuration;
     [SerializeField] private MoveTransit _moveTransit;
-
-    private readonly int _shootKey = Animator.StringToHash("Shoot");
-    private readonly int _isDribbleKey = Animator.StringToHash("IsDribble");
+    [SerializeField] private float _waitPreapreThrow;
 
     private void OnEnable()
     {
-        Animator.SetTrigger(_shootKey);
-        Animator.SetBool(_isDribbleKey, false);
-
-        _ballThrower.Throw();
-
         StartCoroutine(JumpRoutine(transform.position));
     }
 
@@ -29,6 +22,15 @@ public class EnemyThrowState : State
     private IEnumerator JumpRoutine(Vector3 startPosition)
     {
         float timer = 0f;
+        startPosition.y = 0;
+
+        _ballThrower.LookAtGoal();
+
+        yield return new WaitForSeconds(_waitPreapreThrow);
+
+        _ballThrower.Throw();
+        Animator.SetBool(Constants._isDribbleKey, false);
+        Animator.SetTrigger(Constants._shootKey);
 
         while (timer < _jumpDuration)
         {
@@ -40,6 +42,8 @@ public class EnemyThrowState : State
             timer += Time.deltaTime;
             yield return null;
         }
+
+        startPosition.y = 0;
 
         transform.position = startPosition;
         _moveTransit?.Transit();

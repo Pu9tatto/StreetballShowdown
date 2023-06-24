@@ -9,11 +9,14 @@ public class EnemyBallThrower : BallThrower
     {
         float rate = Random.value;
 
+        CalculateDistance();
+
         if (rate > _maxRateForGoal)
             return OverpowerMissPoints[Random.Range(0, OverpowerMissPoints.Length)];
         else if (rate < _minRateForGoal)
             return UnderpowerMissPoints[Random.Range(0, UnderpowerMissPoints.Length)];
         else
             return GoalPoint;
+
     }
 }

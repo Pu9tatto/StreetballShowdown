@@ -6,6 +6,7 @@ using System.Collections;
 public class Ball : MonoBehaviour
 {
     [SerializeField] private float _throwBounced;
+    [SerializeField] private BallOwner _owner = BallOwner.None;
 
     private float[] _dribblePoints = new float[2];
     private int currentWaypointIndex = 0;
@@ -14,6 +15,10 @@ public class Ball : MonoBehaviour
     private Coroutine _current;
     private Rigidbody _rigidbody;
     private Collider _collider;
+    private float _throwDistance;
+
+    public float ThrowDistance => _throwDistance;
+    public BallOwner Owner => _owner;
 
     private void Awake()
     {
@@ -27,6 +32,19 @@ public class Ball : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
+    public void StopVelosity()
+    {
+        _rigidbody.velocity = Vector3.zero;
+    }
+
+    public void SwapOwner()
+    {
+        if (_owner == BallOwner.Player)
+            _owner = BallOwner.Enemy;
+        else if( _owner == BallOwner.Enemy)
+            _owner = BallOwner.Player;
+    }
+
     public void StartDribble(float topPoint, float botPoint, float duration)
     {
         _dribblePoints[0] = topPoint;
@@ -36,8 +54,9 @@ public class Ball : MonoBehaviour
         StartState(PatrolCoroutine());
     }
 
-    public void StartThrow(BasketPoint endPoint, float height, float speed)
+    public void StartThrow(BasketPoint endPoint, float height, float speed, float throwDistance)
     {
+        _throwDistance = throwDistance;
         Vector3 startPoint = transform.position;
         StartState(ThrowCoroutin(startPoint, endPoint.transform.position, height, speed));
     }
@@ -65,6 +84,8 @@ public class Ball : MonoBehaviour
         }
 
         MakeNonKinematic();
+
+        SwapOwner();
 
         Vector3 throwDirection = (endPoint - startPoint) * _throwBounced;
 
@@ -116,4 +137,10 @@ public class Ball : MonoBehaviour
         _current = StartCoroutine(corotine);
     }
 
+    public enum BallOwner
+    {
+        None,
+        Player,
+        Enemy
+    }
 }

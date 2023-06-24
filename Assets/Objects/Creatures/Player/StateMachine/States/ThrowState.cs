@@ -28,6 +28,8 @@ public class ThrowState : State
 
     private IEnumerator JumpRoutine(Vector3 startPosition)
     {
+        startPosition.y = 0;
+
         float timer = 0f;
 
         while (timer < _jumpDuration)

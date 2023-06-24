@@ -10,6 +10,7 @@ public class EnemyMoveState : EnemyState
 
     private CreatureMovement _movement;
     private Vector2 _direction;
+    private float _stopSpeed = 0f;
 
     private void Awake()
     {
@@ -19,7 +20,14 @@ public class EnemyMoveState : EnemyState
     private void Update()
     {
         SetDirection();
-        _movement.Move(_direction, _speed);
+        float speed = _ball.Owner == Ball.BallOwner.Player ? _stopSpeed : _speed;
+        Animator?.SetFloat(_velocityKey, speed);
+        _movement.Move(_direction, speed);
+    }
+
+    private void OnDisable()
+    {
+        Animator?.SetFloat(_velocityKey, 0);
     }
 
     private void SetDirection()
@@ -27,7 +35,5 @@ public class EnemyMoveState : EnemyState
         Vector2 heading = new Vector2(_ball.transform.position.x - transform.position.x, _ball.transform.position.z - transform.position.z);
         float distance = heading.magnitude;
         _direction = heading / distance;
-
-        Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
     }
 }

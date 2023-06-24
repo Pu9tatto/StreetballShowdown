@@ -21,14 +21,12 @@ public class PlayerBallThrower : BallThrower
     private float _throwPower;
     private float _minNecassaryForce;
     private float _maxNecassaryForce;
-    private float _distance;
     private float _throwAngle;
 
     public void SetPower(float power) => _throwPower = power;
 
     public void SetInputDirection(Vector2 inputDirection) => _inputDirection = inputDirection;
-
-
+    
     private void CalculateAngleHit(Vector2 inputDirection)
     {
         Vector2 planeTargetPosition = new Vector2(GoalPoint.transform.position.x, GoalPoint.transform.position.z);
@@ -38,8 +36,9 @@ public class PlayerBallThrower : BallThrower
 
         _throwAngle = Vector2.Angle(_throwDirection, inputDirection);
 
-        _distance = _throwDirection.magnitude;
-        Debug.Log(_distance);
+        CalculateDistance();
+
+        Debug.Log("Distance: " + Distance);
     }
 
     protected override BasketPoint CalculateThrowPoint()
@@ -57,14 +56,16 @@ public class PlayerBallThrower : BallThrower
             return _missPoints[Random.Range(0, _missPoints.Length)]; 
     }
 
+    protected override void CalculateDistance() => Distance = _throwDirection.magnitude;
+
     private void CalculateNecassaryForce()
     {
-        if (_distance > _minDistanceForLongThrow)
+        if (Distance > _minDistanceForLongThrow)
         {
             _minNecassaryForce = Mathf.Clamp01(_necessaryForceForLongThrow - _permissibleVariationForLongThrow);
             _maxNecassaryForce = Mathf.Clamp01(_necessaryForceForLongThrow + _permissibleVariationForLongThrow);
         }
-        else if (_distance > _minDistanceForMiddleThrow)
+        else if (Distance > _minDistanceForMiddleThrow)
         {
             _minNecassaryForce = Mathf.Clamp01(_necessaryForceForMiddleThrow - _permissibleVariationForMiddleThrow);
             _maxNecassaryForce = Mathf.Clamp01(_necessaryForceForMiddleThrow + _permissibleVariationForMiddleThrow);

@@ -39,6 +39,7 @@ public class DribbleTransit : Transition
 
         ball.transform.parent = gameObject.transform;
 
+        
         ball.StartDribble(modifiedPointInHand.y, modifiedPointInFallY, _dribbleDuration);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BallThrower : MonoBehaviour
 {
@@ -11,10 +12,19 @@ public class BallThrower : MonoBehaviour
     [SerializeField] private float _throwHewight;
     [SerializeField] private float _throwSpeed;
 
+    public event UnityAction<bool> IsPickedBall;
     protected Ball Ball;
+    protected float Distance;
+
     private BasketPoint _aimPoint;
 
-    public void SetBall(Ball ball) => Ball = ball;
+    public float GetThrowDistance() => Distance;
+
+    public void SetBall(Ball ball) 
+    {
+        Ball = ball;
+        IsPickedBall?.Invoke(true);
+    }
 
     public void LookAtGoal()
     {
@@ -32,9 +42,11 @@ public class BallThrower : MonoBehaviour
 
             _aimPoint = CalculateThrowPoint();
 
-            Ball.StartThrow(_aimPoint, _throwHewight, _throwSpeed);
+            Ball.StartThrow(_aimPoint, _throwHewight, _throwSpeed, Distance);
 
             Ball = null;
+
+            IsPickedBall?.Invoke(false);
         }
     }
 
@@ -42,4 +54,15 @@ public class BallThrower : MonoBehaviour
     {
         return null;
     }
+
+    protected virtual void CalculateDistance()
+    {
+        Vector2 planeTargetPosition = new Vector2(GoalPoint.transform.position.x, GoalPoint.transform.position.z);
+        Vector2 planeEnemyPosition = new Vector2(transform.position.x, transform.position.z);
+
+        Vector2 throwDirection = planeTargetPosition - planeEnemyPosition;
+
+        Distance = throwDirection.magnitude;
+    }
+
 }
