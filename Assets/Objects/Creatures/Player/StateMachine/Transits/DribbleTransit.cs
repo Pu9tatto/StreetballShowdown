@@ -26,7 +26,7 @@ public class DribbleTransit : Transition
         }
     }
 
-    private void PickBall(Ball ball)
+    protected virtual void PickBall(Ball ball)
     {
         ball.MakeKinematic();
 
@@ -39,7 +39,6 @@ public class DribbleTransit : Transition
 
         ball.transform.parent = gameObject.transform;
 
-        
         ball.StartDribble(modifiedPointInHand.y, modifiedPointInFallY, _dribbleDuration);
     }
 }

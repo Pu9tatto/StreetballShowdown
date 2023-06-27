@@ -1148,6 +1148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5560732405008549107}
     - target: {fileID: 8480105065866889165, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
+      propertyPath: _targetRotation
+      value: 
+      objectReference: {fileID: 8742554383076739584}
+    - target: {fileID: 8480105065866889165, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: _targetrotation
       value: 
       objectReference: {fileID: 2037877731}
@@ -2465,3 +2469,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc130aa9598123d4db17b4fa48cb25cd, type: 3}
+--- !u!4 &8742554383076739584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8745189920385132859, guid: dc130aa9598123d4db17b4fa48cb25cd, type: 3}
+  m_PrefabInstance: {fileID: 8742554383076739583}
+  m_PrefabAsset: {fileID: 0}

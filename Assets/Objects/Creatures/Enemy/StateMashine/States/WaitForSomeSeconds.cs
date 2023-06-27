@@ -1,6 +1,6 @@
 public class WaitForSomeSeconds : State
 {
-    private void Awake()
+    private void OnEnable()
     {
         
     }

@@ -29,8 +29,8 @@ public class EnemyThrowState : State
         yield return new WaitForSeconds(_waitPreapreThrow);
 
         _ballThrower.Throw();
-        Animator.SetBool(Constants._isDribbleKey, false);
-        Animator.SetTrigger(Constants._shootKey);
+        Animator.SetBool(Constants.IsDribbleKey, false);
+        Animator.SetTrigger(Constants.ShootKey);
 
         while (timer < _jumpDuration)
         {

@@ -1160,7 +1160,6 @@ GameObject:
   - component: {fileID: 3877048640053125975}
   - component: {fileID: 3877048640053125973}
   - component: {fileID: 3877048640053125974}
-  - component: {fileID: 1101988137598668081}
   - component: {fileID: 3877048640053125970}
   - component: {fileID: 3877048640053125971}
   - component: {fileID: 3877048640053125980}
@@ -1170,7 +1169,6 @@ GameObject:
   - component: {fileID: 3877048640053125979}
   - component: {fileID: 3877048640053125969}
   - component: {fileID: 3877048640053125983}
-  - component: {fileID: 8711575330169125883}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1239,7 +1237,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.7, z: 0}
+  m_Center: {x: 0, y: 1.07, z: 0}
 --- !u!114 &4417973446191222211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,20 +1333,6 @@ MonoBehaviour:
   transitions:
   - {fileID: 3877048640053125970}
   _speed: 6
---- !u!114 &1101988137598668081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877048640053125988}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa6043ccf919094896241028e429d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetState: {fileID: 0}
-  _pointInHand: {fileID: 0}
 --- !u!114 &3877048640053125970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,20 +1472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 3877048640053125974}
---- !u!114 &8711575330169125883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877048640053125988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb5ef4b16da3434686c655ff3e824ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ballThrower: {fileID: 3877048640053125975}
-  _movement: {fileID: 4417973446191222211}
 --- !u!1 &3877048640053125990
 GameObject:
   m_ObjectHideFlags: 0

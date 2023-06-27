@@ -45,6 +45,8 @@ public class Ball : MonoBehaviour
             _owner = BallOwner.Player;
     }
 
+    public void SetOwner(BallOwner owner) => _owner = owner;
+
     public void StartDribble(float topPoint, float botPoint, float duration)
     {
         _dribblePoints[0] = topPoint;
@@ -54,11 +56,11 @@ public class Ball : MonoBehaviour
         StartState(PatrolCoroutine());
     }
 
-    public void StartThrow(BasketPoint endPoint, float height, float speed, float throwDistance)
+    public void StartThrow(Vector3 endPoint, float height, float speed, float throwDistance)
     {
         _throwDistance = throwDistance;
         Vector3 startPoint = transform.position;
-        StartState(ThrowCoroutin(startPoint, endPoint.transform.position, height, speed));
+        StartState(ThrowCoroutin(startPoint, endPoint, height, speed));
     }
 
     private void MakeNonKinematic()

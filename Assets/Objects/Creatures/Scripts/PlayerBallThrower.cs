@@ -37,8 +37,6 @@ public class PlayerBallThrower : BallThrower
         _throwAngle = Vector2.Angle(_throwDirection, inputDirection);
 
         CalculateDistance();
-
-        Debug.Log("Distance: " + Distance);
     }
 
     protected override BasketPoint CalculateThrowPoint()

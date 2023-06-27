@@ -26,6 +26,17 @@ public class BallThrower : MonoBehaviour
         IsPickedBall?.Invoke(true);
     }
 
+    public void LoseBall()
+    {
+        if(Ball == null) return;
+
+        Ball.transform.parent = null;
+        Ball.StartThrow(Ball.transform.position+Vector3.right, 0, 2, 0);
+
+        Ball = null;
+        IsPickedBall?.Invoke(false);
+    }
+
     public void LookAtGoal()
     {
         Vector3 rotateDirection = GoalPoint.transform.position - transform.position;
@@ -42,7 +53,7 @@ public class BallThrower : MonoBehaviour
 
             _aimPoint = CalculateThrowPoint();
 
-            Ball.StartThrow(_aimPoint, _throwHewight, _throwSpeed, Distance);
+            Ball.StartThrow(_aimPoint.transform.position, _throwHewight, _throwSpeed, Distance);
 
             Ball = null;
 

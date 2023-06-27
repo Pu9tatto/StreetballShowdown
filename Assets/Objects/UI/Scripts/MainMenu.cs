@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Constants.TwentyOneSceneName);
     }
+
+    public void InvokeDuelMode()
+    {
+        SceneManager.LoadScene(Constants.DuelSceneName);
+    }
 }

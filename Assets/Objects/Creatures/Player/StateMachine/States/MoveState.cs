@@ -5,8 +5,6 @@ public class MoveState : State
 {
     [SerializeField] private float _speed;
 
-    private readonly int _velocityKey = Animator.StringToHash("Velocity");
-
     private IControllable _controller;
     private CreatureMovement _movement;
     private Vector2 _direction;
@@ -17,6 +15,11 @@ public class MoveState : State
         _controller = GetComponent<IControllable>();
     }
 
+    private void OnEnable()
+    {
+        Animator.SetBool(Constants.IsDribbleKey, false);
+    }
+
     private void Update()
     {
         SetDirection();
@@ -25,8 +28,8 @@ public class MoveState : State
 
     private void SetDirection()
     {
-        _direction = _controller.GetDirection();
+        _direction = _controller.GetDirection().normalized;
 
-        Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
+        Animator?.SetFloat(Constants.VelocityKey, _direction.sqrMagnitude);
     }
 }

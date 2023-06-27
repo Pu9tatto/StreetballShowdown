@@ -967,6 +967,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5560732405008549107}
     - target: {fileID: 8480105065866889165, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
+      propertyPath: _targetRotation
+      value: 
+      objectReference: {fileID: 4201243479318724}
+    - target: {fileID: 8480105065866889165, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: _targetrotation
       value: 
       objectReference: {fileID: 6951362470203659131}

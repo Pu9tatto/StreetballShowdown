@@ -1,15 +1,13 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CreatureMovement))]
-
 public class EnemyMoveState : EnemyState
 {
-    [SerializeField] private float _speed;
+    [SerializeField] protected float _speed;
 
-    private readonly int _velocityKey = Animator.StringToHash("Velocity");
+    protected Vector2 Direction;
 
     private CreatureMovement _movement;
-    private Vector2 _direction;
     private float _stopSpeed = 0f;
 
     private void Awake()
@@ -21,19 +19,24 @@ public class EnemyMoveState : EnemyState
     {
         SetDirection();
         float speed = _ball.Owner == Ball.BallOwner.Player ? _stopSpeed : _speed;
-        Animator?.SetFloat(_velocityKey, speed);
-        _movement.Move(_direction, speed);
+        Animator?.SetFloat(Constants.VelocityKey, speed);
+        _movement.Move(Direction, speed);
+    }
+
+    private void OnEnable()
+    {
+        Animator?.SetBool(Constants.IsDribbleKey, false);
     }
 
     private void OnDisable()
     {
-        Animator?.SetFloat(_velocityKey, 0);
+        Animator?.SetFloat(Constants.VelocityKey, 0);
     }
 
-    private void SetDirection()
+    protected virtual void SetDirection()
     {
         Vector2 heading = new Vector2(_ball.transform.position.x - transform.position.x, _ball.transform.position.z - transform.position.z);
         float distance = heading.magnitude;
-        _direction = heading / distance;
+        Direction = heading / distance;
     }
 }

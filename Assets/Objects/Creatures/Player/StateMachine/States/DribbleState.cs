@@ -31,7 +31,7 @@ public class DribbleState : State
 
     private void SetDirection()
     {
-        _direction = _controller.GetDirection();
+        _direction = _controller.GetDirection().normalized;
 
         Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
     }

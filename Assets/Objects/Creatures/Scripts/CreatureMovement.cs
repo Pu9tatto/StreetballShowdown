@@ -11,6 +11,7 @@ public class CreatureMovement : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
     }
+
     public void Move(Vector2 direction, float speed)
     {
         _characterController.Move(new Vector3(direction.x * speed * Time.deltaTime, 0, direction.y * speed * Time.deltaTime));

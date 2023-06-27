@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CameraFolower : MonoBehaviour
+public class TargetFolower : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] private Transform _targetrotation;
+    [SerializeField] private Transform _targetRotation;
 
     [SerializeField] private float _smoothSpeed = 0.125f;
 
@@ -31,7 +31,7 @@ public class CameraFolower : MonoBehaviour
 
             transform.position = smoothedPosition;
 
-            desiredLookAtPosition = _targetrotation.position + _lookAtOffset;
+            desiredLookAtPosition = _targetRotation.position + _lookAtOffset;
 
             Quaternion desiredRotation = Quaternion.LookRotation(desiredLookAtPosition - transform.position);
 
