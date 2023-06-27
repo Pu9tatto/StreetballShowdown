@@ -11,4 +11,6 @@ static class Constants
     public const string TrainingSceneName = "Training";
     public const string TwentyOneSceneName = "TwentyOne";
     public const string DuelSceneName = "Duel";
+
+    public const float ThreePointDistance = 6.75f;
 }

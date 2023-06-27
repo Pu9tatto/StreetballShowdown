@@ -8,7 +8,7 @@ public class FreeKick : MonoBehaviour
     private Transform[] _playerFreeKickPoints;
     private Transform[] _enemyFreeKickPoints;
 
-    private Vector3 _freeKickPoint;
+    private Vector3 _freeKickPoint = new Vector3 (0,5,0);
 
     private void Start()
     {

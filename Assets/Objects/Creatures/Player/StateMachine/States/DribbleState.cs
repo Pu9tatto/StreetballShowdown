@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CreatureMovement))]
 public class DribbleState : State
 {
     [SerializeField] private float _speed;
+    [SerializeField] private BasketPoint _goalPoint;
 
-    private readonly int _velocityKey = Animator.StringToHash("Velocity");
-    private readonly int _isDribbleKey = Animator.StringToHash("IsDribble");
+    public event UnityAction<bool> OutOffThreePoint;
 
     private IControllable _controller;
     private CreatureMovement _movement;
@@ -20,11 +21,12 @@ public class DribbleState : State
 
     private void OnEnable()
     {
-        Animator?.SetBool(_isDribbleKey, true);
+        Animator?.SetBool(Constants.IsDribbleKey, true);
     }
 
     private void Update()
     {
+        CheckOutOffThreePoint();
         SetDirection();
         _movement.Move(_direction, _speed);
     }
@@ -33,6 +35,15 @@ public class DribbleState : State
     {
         _direction = _controller.GetDirection().normalized;
 
-        Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
+        Animator?.SetFloat(Constants.VelocityKey, _direction.sqrMagnitude);
+    }
+
+    private void CheckOutOffThreePoint()
+    {
+        Vector2 heading = new Vector2(_goalPoint.transform.position.x - transform.position.x, _goalPoint.transform.position.z - transform.position.z);
+        float sqrDistance = heading.sqrMagnitude;
+
+        if (sqrDistance > Constants.ThreePointDistance * Constants.ThreePointDistance)
+            OutOffThreePoint?.Invoke(true);
     }
 }

@@ -17,4 +17,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Constants.DuelSceneName);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CreatureMovement))]
 
@@ -6,6 +7,8 @@ public class EnemyDribbleState : EnemyState
 {
     [SerializeField] private float _speed;
     [SerializeField] private bool _isRunAway;
+
+    public event UnityAction<bool> OutOffThreePoint;
 
     private readonly int _velocityKey = Animator.StringToHash("Velocity");
     private readonly int _isDribbleKey = Animator.StringToHash("IsDribble");
@@ -35,6 +38,8 @@ public class EnemyDribbleState : EnemyState
         float distance = heading.magnitude;
         _direction = heading / distance;
 
+        CheckOutOffThreePoint(distance);
+
         Animator?.SetFloat(_velocityKey, _direction.sqrMagnitude);
 
         if (_isRunAway)
@@ -42,5 +47,11 @@ public class EnemyDribbleState : EnemyState
             _direction.x *= -1;
             _direction.y *= _direction.y < 0 ? 1 : -1;
         }
+    }
+
+    private void CheckOutOffThreePoint(float distance)
+    {
+        if (distance* distance > Constants.ThreePointDistance * Constants.ThreePointDistance)
+            OutOffThreePoint?.Invoke(false);
     }
 }

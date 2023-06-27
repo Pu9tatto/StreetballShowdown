@@ -2562,6 +2562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3877048640053125971, guid: 19f3f373b46b05e44a12331c461f31a1, type: 3}
+      propertyPath: _goalPoint
+      value: 
+      objectReference: {fileID: 8742554383493186077}
     - target: {fileID: 3877048640053125975, guid: 19f3f373b46b05e44a12331c461f31a1, type: 3}
       propertyPath: GoalPoint
       value: 
@@ -3219,9 +3223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cad3f68e3cc0d844a29919218784e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _freePointZoneDistance: 6.75
   _scoreWidget: {fileID: 5155543957265939768}
   _delay: 1
+  _dribbleState: {fileID: 0}
+  _enemyDribbleState: {fileID: 0}
   _goalEvent:
     m_PersistentCalls:
       m_Calls: []

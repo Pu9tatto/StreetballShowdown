@@ -2,14 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider))]
-public class ScoreCounter : MonoBehaviour
+public class TwentyOneScoreCounter : MonoBehaviour
 {
     [SerializeField] private ScoreWidget _scoreWidget;
     [SerializeField] private float _delay = 0.5f;
-    [Space]
-    [SerializeField] private DribbleState _dribbleState;
-    [SerializeField] private EnemyDribbleState _enemyDribbleState;
 
     [SerializeField] private UnityEvent<Ball> _goalEvent;
 
@@ -17,23 +13,9 @@ public class ScoreCounter : MonoBehaviour
     private int _addedCloseZoneScore = 2;
     private int _addedLongZoneScore = 3;
 
-    private bool _isPlayerAttack;
-
     private void Awake()
     {
         _collider = GetComponent<Collider>();
-    }
-
-    private void OnEnable()
-    {
-        _dribbleState.OutOffThreePoint += OnSetAttacker;
-        _enemyDribbleState.OutOffThreePoint += OnSetAttacker;
-    }
-
-    private void OnDisable()
-    {
-        _dribbleState.OutOffThreePoint -= OnSetAttacker;
-        _enemyDribbleState.OutOffThreePoint -= OnSetAttacker;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,8 +46,6 @@ public class ScoreCounter : MonoBehaviour
         int addedScore = ball.ThrowDistance < Constants.ThreePointDistance ?
              _addedCloseZoneScore : _addedLongZoneScore;
 
-        _scoreWidget.AddScore(addedScore, _isPlayerAttack);
+        _scoreWidget.AddScore(addedScore, ball.Owner != Ball.BallOwner.Enemy);
     }
-
-    private void OnSetAttacker(bool isPlayer) => _isPlayerAttack = isPlayer;
 }

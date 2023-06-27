@@ -451,6 +451,37 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &353581386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353581387}
+  m_Layer: 0
+  m_Name: DuelPointsPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353581387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353581386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 3.101}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1664501815}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364326518
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,17 +835,6 @@ Transform:
   m_Father: {fileID: 1664501815}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1081716497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-  m_PrefabInstance: {fileID: 5155543956974238211}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b965292b5524f34d8082c2345a53037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1108066837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1038,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402282913}
   m_CullTransparentMesh: 1
+--- !u!1 &1425890977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425890979}
+  - component: {fileID: 1425890980}
+  m_Layer: 0
+  m_Name: DuelScoreWidget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425890979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425890977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 226.5, y: 402.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425890980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425890977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c57b559c5874be4e9d7339e4178cd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTextView: {fileID: 1703213426012369178}
+  GameOverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2007183255}
+        m_TargetAssemblyTypeName: EndGameWindowWidget, Assembly-CSharp
+        m_MethodName: ShowEndGameWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _gameOverScore: 11
+  _enemyTextView: {fileID: 1703213426582981950}
+  _title: {fileID: 68338912}
+  _fullSecondsTime: 120
+  _timerView: {fileID: 1703213426416672194}
 --- !u!1 &1664501814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1141,7 @@ Transform:
   - {fileID: 1022450505}
   - {fileID: 1080764876}
   - {fileID: 364326519}
+  - {fileID: 353581387}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4518,6 +4604,7 @@ MonoBehaviour:
   - {fileID: 3877048639466161969}
   - {fileID: 4825296515842311808}
   _speed: 5
+  _goalPoint: {fileID: 8742554383493186077}
 --- !u!1 &3877048639466162017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6074,7 +6161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 4304167183403484769}
-  _distanceForRunAway: 6.75
   _goalPoint: {fileID: 8742554383493186077}
 --- !u!114 &4304167183403484795
 MonoBehaviour:
@@ -6183,7 +6269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 1760932989146195530}
-  _timeForWait: 0.5
+  _timeForWait: 1
 --- !u!114 &4304167183403484803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6522,83 +6608,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &5155543956974238211
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: _title
-      value: 
-      objectReference: {fileID: 68338912}
-    - target: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: _freeKick
-      value: 
-      objectReference: {fileID: 8742554383493186071}
-    - target: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: _enemyTextView
-      value: 
-      objectReference: {fileID: 1703213426582981950}
-    - target: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: _playerTextView
-      value: 
-      objectReference: {fileID: 1703213426012369178}
-    - target: {fileID: 1081716497, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: GameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2007183255}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 226.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 402.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540832, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155543956240540834, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
-      propertyPath: m_Name
-      value: ScoreWidget21
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cb8c0b5ca8d2f0b42be1b7f55aab4570, type: 3}
 --- !u!224 &5520699926432028714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7526,18 +7535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872754e3ef05d174e808e35a46dd7cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _freeKickPoints2Points:
-  - {fileID: 1290540626}
-  - {fileID: 1349221668}
-  - {fileID: 30274261}
-  - {fileID: 1236153071}
-  - {fileID: 1108066838}
-  _freeKickPoints3Points:
-  - {fileID: 1969018866}
-  - {fileID: 967651967}
-  - {fileID: 1022450505}
-  - {fileID: 1080764876}
-  - {fileID: 364326519}
+  _freeKickPoints2Points: []
+  _freeKickPoints3Points: []
 --- !u!135 &8742554383493186074
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7563,9 +7562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cad3f68e3cc0d844a29919218784e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _freePointZoneDistance: 6.75
-  _scoreWidget: {fileID: 1081716497}
+  _scoreWidget: {fileID: 1425890980}
   _delay: 1
+  _dribbleState: {fileID: 3877048639466161982}
+  _enemyDribbleState: {fileID: 4304167183403484769}
   _goalEvent:
     m_PersistentCalls:
       m_Calls:
