@@ -3,16 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(CreatureMovement))]
 public class MoveState : State
 {
-    [SerializeField] private float _speed;
-
     private IControllable _controller;
     private CreatureMovement _movement;
     private Vector2 _direction;
+    private float _speed;
 
     private void Awake()
     {
         _movement = GetComponent<CreatureMovement>();
         _controller = GetComponent<IControllable>();
+        _speed = GetComponent<PlayerCharacteristics>().GetSpeed();
     }
 
     private void OnEnable()
@@ -28,7 +28,7 @@ public class MoveState : State
 
     private void SetDirection()
     {
-        _direction = _controller.GetDirection().normalized;
+        _direction = _controller.GetDirection();
 
         Animator?.SetFloat(Constants.VelocityKey, _direction.sqrMagnitude);
     }

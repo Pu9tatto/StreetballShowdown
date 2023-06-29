@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _targetrotation: {fileID: 0}
+  _targetRotation: {fileID: 0}
   _smoothSpeed: 0.125
   _offset: {x: 0, y: 5, z: -8}
   _lookAtOffset: {x: 0, y: -20, z: 25.13}

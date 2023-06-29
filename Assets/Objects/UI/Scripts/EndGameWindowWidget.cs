@@ -3,13 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class EndGameWindowWidget : MonoBehaviour
 {
-    [SerializeField] private GameObject _endGameWindow;
+    [SerializeField] private EndGameWindow _endGameWindow;
+    [SerializeField] private EndGameWindow _pauseGameWindow;
 
-    private const string _menuSceneNAme = "Menu";
-
-    private void OnDisable()
+    public void Continue()
     {
-        Time.timeScale = 1.0f;
+        _pauseGameWindow.gameObject.SetActive(false);
     }
 
     public void Restart()
@@ -19,12 +18,18 @@ public class EndGameWindowWidget : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene(_menuSceneNAme);
+        SceneManager.LoadScene(Constants.MenuSceneName);
     }
 
     public void ShowEndGameWindow()
     {
         Time.timeScale = 0.0f;
-        _endGameWindow.SetActive(true);
+        _endGameWindow.gameObject.SetActive(true);
+    }
+
+    public void ShowPauseGameWindow()
+    {
+        Time.timeScale = 0.0f;
+        _pauseGameWindow.gameObject.SetActive(true);
     }
 }

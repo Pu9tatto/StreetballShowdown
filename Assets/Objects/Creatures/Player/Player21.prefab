@@ -1428,6 +1428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936852158001462672}
   - component: {fileID: 1936852158011331160}
+  - component: {fileID: 5734712227916931491}
   - component: {fileID: 7915633149812105351}
   - component: {fileID: 1324291961703010135}
   - component: {fileID: 1936852158001947129}
@@ -1494,6 +1495,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5734712227916931491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936852158001947120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63992595b33f97d4dbe7114116a8ec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characteristics: {fileID: 11400000, guid: f00f478f5f3ba0046b56f450b72058c0, type: 2}
 --- !u!143 &7915633149812105351
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1569,15 +1583,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _allowableAngle: 10
-  _minDistanceForLongThrow: 6.75
-  _minDistanceForMiddleThrow: 4
   _necessaryForceForLongThrow: 0.85
   _necessaryForceForMiddleThrow: 0.6
   _necessaryForceForCloseThrow: 0.25
-  _permissibleVariationForLongThrow: 0.14
-  _permissibleVariationForMiddleThrow: 0.2
-  _permissibleVariationForCloseThrow: 0.26
 --- !u!114 &1936852158001947073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1614,6 @@ MonoBehaviour:
   Animator: {fileID: 1936852158011331160}
   transitions:
   - {fileID: 2334012134916345765}
-  _speed: 6
 --- !u!114 &2334012134916345765
 MonoBehaviour:
   m_ObjectHideFlags: 0

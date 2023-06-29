@@ -15,7 +15,7 @@ public class TrainingScoreWidget : ScoreWidget
     public override void AddScore(int value, bool isPlayer)
     {
         _playerScore += value;
-        _playerTextView?.SetScore(_playerScore);
+        _playerTextView?.SetValue(_playerScore);
     }
 
     private IEnumerator StartTimer(int fullSecondsTime)

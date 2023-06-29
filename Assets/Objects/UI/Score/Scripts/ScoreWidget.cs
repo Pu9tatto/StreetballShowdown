@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ScoreWidget : MonoBehaviour
 {
-    [SerializeField] protected ScoreView _playerTextView;
+    [SerializeField] protected IntValueViewer _playerTextView;
     [SerializeField] protected UnityEvent GameOverEvent;
 
     protected int _playerScore;

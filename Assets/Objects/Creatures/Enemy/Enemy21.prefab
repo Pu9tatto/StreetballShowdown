@@ -1398,6 +1398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9142418855985631934}
   - component: {fileID: 6713472331990588766}
+  - component: {fileID: 4458613657428697680}
   - component: {fileID: 6713472331990588767}
   - component: {fileID: 9142418855976353142}
   - component: {fileID: 6713472331990588763}
@@ -1456,6 +1457,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.07, z: 0}
+--- !u!114 &4458613657428697680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142418855985729246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d933069f6211d498ed97e5e170434b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characteristics: {fileID: 11400000, guid: 0b3c000fcc038ea4ea37f15258e537b5, type: 2}
 --- !u!114 &6713472331990588767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1496,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 89ef9f70f06cb964e8581ec155e57b59, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1513,8 +1527,6 @@ MonoBehaviour:
   - {fileID: 0}
   _throwHewight: 5
   _throwSpeed: 1
-  _minRateForGoal: 0.25
-  _maxRateForGoal: 0.74
 --- !u!114 &9142418855976353136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,7 +1557,6 @@ MonoBehaviour:
   - {fileID: 9142418855976353139}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 4
 --- !u!114 &9142418855976353139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,7 +1622,6 @@ MonoBehaviour:
   - {fileID: 9142418855976353139}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 4
 --- !u!1 &9142418855985729264
 GameObject:
   m_ObjectHideFlags: 0

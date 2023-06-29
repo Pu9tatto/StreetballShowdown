@@ -1155,6 +1155,7 @@ GameObject:
   - component: {fileID: 3877048640052707076}
   - component: {fileID: 3877048640062509260}
   - component: {fileID: 4825296517436531219}
+  - component: {fileID: 6043271258815796923}
   - component: {fileID: 4417973446191222211}
   - component: {fileID: 3877048640053125997}
   - component: {fileID: 3877048640053125975}
@@ -1238,6 +1239,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.07, z: 0}
+--- !u!114 &6043271258815796923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877048640053125988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63992595b33f97d4dbe7114116a8ec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characteristics:
+    _speed: 5
+    _accuracy: 0
+    _handling: 0
 --- !u!114 &4417973446191222211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,6 +1382,7 @@ MonoBehaviour:
   transitions:
   - {fileID: 3877048640053125980}
   _speed: 5
+  _goalPoint: {fileID: 0}
 --- !u!114 &3877048640053125980
 MonoBehaviour:
   m_ObjectHideFlags: 0

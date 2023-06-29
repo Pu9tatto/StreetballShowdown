@@ -21,14 +21,15 @@ public class EnemyThrowState : State
 
     private IEnumerator JumpRoutine(Vector3 startPosition)
     {
-        float timer = 0f;
         startPosition.y = 0;
 
-        _ballThrower.LookAtGoal();
+        float timer = 0f;
+
+        _ballThrower?.LookAtGoal();
 
         yield return new WaitForSeconds(_waitPreapreThrow);
 
-        _ballThrower.Throw();
+        _ballThrower?.Throw();
         Animator.SetBool(Constants.IsDribbleKey, false);
         Animator.SetTrigger(Constants.ShootKey);
 
@@ -42,8 +43,6 @@ public class EnemyThrowState : State
             timer += Time.deltaTime;
             yield return null;
         }
-
-        startPosition.y = 0;
 
         transform.position = startPosition;
         _moveTransit?.Transit();

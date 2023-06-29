@@ -6,15 +6,9 @@ public class PlayerBallThrower : BallThrower
     [SerializeField] private BasketPoint[] _missPoints;
     [Space]
     [Header("Calculate Hit")]
-    [SerializeField] private float _allowableAngle;
-    [SerializeField] private float _minDistanceForLongThrow;
-    [SerializeField] private float _minDistanceForMiddleThrow;
     [SerializeField, Range(0, 1)] private float _necessaryForceForLongThrow;
     [SerializeField, Range(0, 1)] private float _necessaryForceForMiddleThrow;
     [SerializeField, Range(0, 1)] private float _necessaryForceForCloseThrow;
-    [SerializeField, Range(0, 1)] private float _permissibleVariationForLongThrow;
-    [SerializeField, Range(0, 1)] private float _permissibleVariationForMiddleThrow;
-    [SerializeField, Range(0, 1)] private float _permissibleVariationForCloseThrow;
 
     private Vector2 _inputDirection;
     private Vector2 _throwDirection;
@@ -22,6 +16,16 @@ public class PlayerBallThrower : BallThrower
     private float _minNecassaryForce;
     private float _maxNecassaryForce;
     private float _throwAngle;
+    private float _accuracy;
+    private float _allowableAngle;
+    private float _permissibleVariationForse;
+
+    private void Awake()
+    {
+        _accuracy = GetComponent<PlayerCharacteristics>().GetAccuracy();
+
+        CalculateAccuracy();
+    }
 
     public void SetPower(float power) => _throwPower = power;
 
@@ -58,20 +62,27 @@ public class PlayerBallThrower : BallThrower
 
     private void CalculateNecassaryForce()
     {
-        if (Distance > _minDistanceForLongThrow)
+        if (Distance > Constants.ThreePointDistance)
         {
-            _minNecassaryForce = Mathf.Clamp01(_necessaryForceForLongThrow - _permissibleVariationForLongThrow);
-            _maxNecassaryForce = Mathf.Clamp01(_necessaryForceForLongThrow + _permissibleVariationForLongThrow);
+            _minNecassaryForce = Mathf.Clamp(_necessaryForceForLongThrow - _permissibleVariationForse, 0, 0.99f);
+            _maxNecassaryForce = Mathf.Clamp(_necessaryForceForLongThrow + _permissibleVariationForse, 0 , 0.99f);
         }
-        else if (Distance > _minDistanceForMiddleThrow)
+        else if (Distance > Constants.MiddlePointDistance)
         {
-            _minNecassaryForce = Mathf.Clamp01(_necessaryForceForMiddleThrow - _permissibleVariationForMiddleThrow);
-            _maxNecassaryForce = Mathf.Clamp01(_necessaryForceForMiddleThrow + _permissibleVariationForMiddleThrow);
+
+            _minNecassaryForce = Mathf.Clamp(_necessaryForceForMiddleThrow - _permissibleVariationForse, 0, 0.99f);
+            _maxNecassaryForce = Mathf.Clamp(_necessaryForceForMiddleThrow + _permissibleVariationForse, 0, 0.99f);
         }
         else
         {
-            _minNecassaryForce = Mathf.Clamp01(_necessaryForceForCloseThrow - _permissibleVariationForCloseThrow);
-            _maxNecassaryForce = Mathf.Clamp01(_necessaryForceForCloseThrow + _permissibleVariationForCloseThrow);
+            _minNecassaryForce = Mathf.Clamp(_necessaryForceForCloseThrow - _permissibleVariationForse, 0, 0.99f);
+            _maxNecassaryForce = Mathf.Clamp(_necessaryForceForCloseThrow + _permissibleVariationForse, 0, 0.99f);
         }
+    }
+
+    private void CalculateAccuracy()
+    {
+        _allowableAngle = 9f + _accuracy / 10f;
+        _permissibleVariationForse = 0.1f + _accuracy / 1500f;
     }
 }

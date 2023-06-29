@@ -4,7 +4,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CreatureMovement))]
 public class DribbleState : State
 {
-    [SerializeField] private float _speed;
     [SerializeField] private BasketPoint _goalPoint;
 
     public event UnityAction<bool> OutOffThreePoint;
@@ -12,11 +11,13 @@ public class DribbleState : State
     private IControllable _controller;
     private CreatureMovement _movement;
     private Vector2 _direction;
+    private float _speed;
 
     private void Awake()
     {
         _movement = GetComponent<CreatureMovement>();
         _controller = GetComponent<IControllable>();
+        _speed = GetComponent<PlayerCharacteristics>().GetSpeed() * Constants.DribbleModifySpeed;
     }
 
     private void OnEnable()

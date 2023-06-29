@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TextView : MonoBehaviour
+public class EndTitleView : MonoBehaviour
 {
     [SerializeField] private string _winText = "You Win";
     [SerializeField] private string _loseText = "You Lose";

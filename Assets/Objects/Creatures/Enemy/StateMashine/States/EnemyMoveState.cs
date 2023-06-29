@@ -3,8 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(CreatureMovement))]
 public class EnemyMoveState : EnemyState
 {
-    [SerializeField] protected float _speed;
-
+    protected float Speed;
     protected Vector2 Direction;
 
     private CreatureMovement _movement;
@@ -13,12 +12,13 @@ public class EnemyMoveState : EnemyState
     private void Awake()
     {
         _movement = GetComponent<CreatureMovement>();
+        Speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
     private void Update()
     {
         SetDirection();
-        float speed = _ball.Owner == Ball.BallOwner.Player ? _stopSpeed : _speed;
+        float speed = _ball.Owner == Ball.BallOwner.Player ? _stopSpeed : Speed;
         Animator?.SetFloat(Constants.VelocityKey, speed);
         _movement.Move(Direction, speed);
     }

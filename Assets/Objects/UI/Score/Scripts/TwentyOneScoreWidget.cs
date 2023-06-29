@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class TwentyOneScoreWidget : ScoreWidget
 {
+    [SerializeField] private RewardWidget _rewardWidget;
     [SerializeField] private int _gameOverScore = 21;
-    [SerializeField] private ScoreView _enemyTextView;
-    [SerializeField] private TextView _title;
+    [SerializeField] private IntValueViewer _enemyTextView;
+    [SerializeField] private EndTitleView _title;
     [SerializeField] private FreeKick _freeKick;
 
     private int _enemyScore;
+    private bool _isLastPlayerHit = false;
+    private bool _isLastEnemyHit = false;
+
 
     protected override void Awake()
     {
@@ -31,11 +35,15 @@ public class TwentyOneScoreWidget : ScoreWidget
         {
             FinishGame(true);
         }
-        else if (_playerScore + value > _gameOverScore)
+        else if (_playerScore >= _gameOverScore - 3 && _isLastPlayerHit == false)
+        {
+            _isLastPlayerHit = true;
+            _freeKick.TurnThreePointZoneForPlayer();
+        }
+        else if (_playerScore > _gameOverScore)
         {
             if (value == 2)
             {
-                _freeKick.TurnThreePointZoneForPlayer();
                 _playerScore -= value;
             }
             else
@@ -44,7 +52,7 @@ public class TwentyOneScoreWidget : ScoreWidget
             }
         }
 
-        _playerTextView?.SetScore(_playerScore);
+        _playerTextView?.SetValue(_playerScore);
     }
 
     public void AddEnemyScore(int value)
@@ -55,11 +63,15 @@ public class TwentyOneScoreWidget : ScoreWidget
         {
             FinishGame(false);
         }
-        else if (_enemyScore + value > _gameOverScore)
+        else if (_enemyScore >= _gameOverScore - 3 && _isLastEnemyHit == false)
+        {
+            _isLastEnemyHit = true;
+            _freeKick.TurnThreePointZoneForEnemy();
+        }
+        else if (_enemyScore > _gameOverScore)
         {
             if (value == 2)
             {
-                _freeKick.TurnThreePointZoneForEnemy();
                 _enemyScore -= value;
             }
             else
@@ -68,13 +80,14 @@ public class TwentyOneScoreWidget : ScoreWidget
             }
         }
 
-        _enemyTextView?.SetScore(_enemyScore);
+        _enemyTextView?.SetValue(_enemyScore);
     }
 
     protected override void FinishGame(bool isWin)
     {
         base.FinishGame(isWin);
         _title.SetTitle(isWin);
+        _rewardWidget.Reward(isWin);
     }
 
 }
