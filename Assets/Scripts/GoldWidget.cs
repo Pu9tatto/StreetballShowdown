@@ -17,7 +17,6 @@ public class GoldWidget : MonoBehaviour
 
     private void OnGoldChanged(int value)
     {
-        Debug.Log("Spend gold: " +  value);
         _goldView.SetValue(value);
     }
 }

@@ -9,7 +9,7 @@ public class Data : MonoBehaviour
 
     public event UnityAction<int> GoldChanged;
 
-    private int _gold = 100;
+    private int _gold = 0;
 
     public int Gold => _gold;
 
@@ -34,8 +34,6 @@ public class Data : MonoBehaviour
         if (_gold >= value)
         {
             _gold -= value;
-
-            Debug.Log("Try Spend gold: " + value);
 
             GoldChanged?.Invoke(_gold);
             return true;

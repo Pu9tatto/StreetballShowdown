@@ -13,18 +13,23 @@ public class Characteristics : ScriptableObject
     public float Accuracy => _accuracy;
     public float Handling => _handling;
 
-    public void ImproveAccuracy(float value)
+    public void SetAccuracy(float value)
     {
-        _accuracy += value;
+        _accuracy = value;
     }
 
-    public void ImproveHandling(float value)
+    public void SetHandling(float value)
     {
-        _handling += value;
+        _handling = value;
     }
 
-    public void ImproveSpeed(float value)
+    public void SetSpeed(float value)
     {
-        _speed += value;
+        _speed = value;
+    }
+
+    public void Load()
+    {
+
     }
 }

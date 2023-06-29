@@ -15,4 +15,9 @@ public class IntValueViewer : MonoBehaviour
     {
         _text.text = value.ToString();
     }
+
+    public void SetValue(string value)
+    {
+        _text.text = value;
+    }
 }

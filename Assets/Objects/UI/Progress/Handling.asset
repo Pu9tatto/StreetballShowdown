@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e449bc0b2fa63d64fa76a8d07dc2c75a, type: 3}
+  m_Name: Handling
+  m_EditorClassIdentifier: 
+  _progressParams:
+  - _cost: 100
+    _progress: 10
+  - _cost: 200
+    _progress: 20
+  - _cost: 300
+    _progress: 30
+  - _cost: 400
+    _progress: 40
+  - _cost: 500
+    _progress: 50
+  - _cost: 600
+    _progress: 60
+  - _cost: 700
+    _progress: 70
+  - _cost: 800
+    _progress: 80
+  - _cost: 900
+    _progress: 90
+  - _cost: 1000
+    _progress: 100
+  - _cost: 1100
+    _progress: 110
+  - _cost: 1200
+    _progress: 120
+  - _cost: 1300
+    _progress: 130
+  - _cost: 1400
+    _progress: 140
+  - _cost: 1500
+    _progress: 150
+  - _cost: 1600
+    _progress: 160
+  - _cost: 1700
+    _progress: 170
+  - _cost: 1800
+    _progress: 180
+  - _cost: 1900
+    _progress: 190
+  - _cost: 2000
+    _progress: 200
+  - _cost: 2100
+    _progress: 210
+  - _cost: 2200
+    _progress: 220
+  - _cost: 2300
+    _progress: 230
+  - _cost: 2400
+    _progress: 240
+  - _cost: 2500
+    _progress: 250
+  - _cost: 2600
+    _progress: 260
+  - _cost: 2700
+    _progress: 270
+  - _cost: 2800
+    _progress: 280
+  - _cost: 2900
+    _progress: 290
+  - _cost: 3000
+    _progress: 300
