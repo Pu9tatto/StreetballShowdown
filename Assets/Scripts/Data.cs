@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Agava.YandexGames;
 
 public class Data : MonoBehaviour
 {
@@ -20,13 +21,18 @@ public class Data : MonoBehaviour
         else if (_instance == this)
             Destroy(gameObject);
 
+        _gold = Saves.Load("Gold", _gold);
+
         DontDestroyOnLoad(gameObject);
+
     }
 
     public void AddGold(int value)
     {
         _gold += value;
         GoldChanged?.Invoke(_gold);
+
+        Saves.Save("Gold", _gold);
     }
 
     public bool TrySpendGold(int value)
@@ -36,10 +42,16 @@ public class Data : MonoBehaviour
             _gold -= value;
 
             GoldChanged?.Invoke(_gold);
+
+
             return true;
         }
 
         return false;
     }
 
+    [ContextMenu("ClearSaves")]
+    private void ClearSaves()
+    {
+    }
 }
