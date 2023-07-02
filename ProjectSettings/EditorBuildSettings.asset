@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoadingGame.unity
+    guid: 331f41473a28e874cb77f5485841b6fd
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 5e2f1b571f3a3ff4a8fc670bcc41a3be
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Duel.unity
     guid: 3256de8176c71044ea70f4cbd6a3ac87
+  - enabled: 1
+    path: Assets/Scenes/Tournament.unity
+    guid: 69ad4695409ee284b9fbf62d00b73ce0
   m_configObjects: {}

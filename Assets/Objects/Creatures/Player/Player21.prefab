@@ -1443,7 +1443,6 @@ GameObject:
   - component: {fileID: 1936852158001947087}
   - component: {fileID: 1936852158001947077}
   - component: {fileID: 1936852158001947083}
-  - component: {fileID: 6326049425788107119}
   m_Layer: 7
   m_Name: Player21
   m_TagString: Untagged
@@ -1736,20 +1735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 1936852158001947074}
---- !u!114 &6326049425788107119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936852158001947120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb5ef4b16da3434686c655ff3e824ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ballThrower: {fileID: 1936852158001947075}
-  _movement: {fileID: 1324291961703010135}
 --- !u!1 &1936852158001947122
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 public class DuelScoreWidget : ScoreWidget
 {
     [SerializeField] private RewardWidget _rewardWidget;
-    [SerializeField] private int _gameOverScore = 21;
+    [SerializeField] private int _gameOverScore = 11;
     [SerializeField] private IntValueViewer _enemyTextView;
     [SerializeField] private EndTitleView _title;
     [Header("Timer")]
@@ -30,6 +30,17 @@ public class DuelScoreWidget : ScoreWidget
             AddPlayerScore(value);
         else
             AddEnemyScore(value);
+    }
+
+    public void Reset()
+    {
+        StopAllCoroutines();
+        StartCoroutine(StartTimer(_fullSecondsTime));
+        _enemyScore = 0;
+        _playerScore = 0;
+        _enemyTextView?.SetValue(_enemyScore);
+        _playerTextView?.SetValue(_playerScore);
+
     }
 
     private void AddEnemyScore(int value)
@@ -81,7 +92,5 @@ public class DuelScoreWidget : ScoreWidget
         {
             FinishGame(_playerScore > _enemyScore);
         }
-
-
     }
 }

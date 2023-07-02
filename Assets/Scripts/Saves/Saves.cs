@@ -1,27 +1,22 @@
 using UnityEngine;
-
 using Agava.YandexGames;
+using System;
 
 public static class Saves
 {
     public static bool IsSavesLoaded { get; private set; }
-    
+
     public const string Gold = nameof(Gold);
+    public const string Accuracy = nameof(Accuracy);
+    public const string Handling = nameof(Handling);
+    public const string Speed = nameof(Speed);
+    public const string Level = nameof(Level);
 
     private static CloudPlayerPrefs _playerPrefs;
 
     static Saves()
     {
-//#if UNITY_EDITOR
-//        LoadData();
-//        return;
-//#endif
-
-//#if UNITY_EDITOR || CRAZYGAMES_SDK || VK_SDK || GD_SDK
-//         LoadData();
-//         return;
-//#endif
-             LoadData();
+        LoadData();
     }
 
     public static void ClearAll()
@@ -68,8 +63,12 @@ public static class Saves
     public static int Load(string key, int defaultValue = 0)
     {
         if (!_playerPrefs.HasKey(key))
+        {
+            Console.WriteLine(key + "NOT founded");
             return defaultValue;
+        }
 
+        Console.WriteLine("GoldLoad = " + _playerPrefs.GetInt(key));
         return _playerPrefs.GetInt(key);
     }
 
@@ -94,16 +93,24 @@ public static class Saves
         string save = JsonUtility.ToJson(_playerPrefs);
 
         PlayerPrefs.SetString("Saves", save);
+
+        PlayerAccount.SetCloudSaveData(save,
+    () => Debug.Log("Success Saves!"),
+    (message) => Debug.Log("Saves Error!" + message));
+
     }
 
     public static void LoadData()
     {
-            PlayerAccount.GetCloudSaveData(OnSuccessLoad, OnErrorLoad);
+        PlayerAccount.GetCloudSaveData(OnSuccessLoad, OnErrorLoad);
+
     }
-    
+
     private static void OnSuccessLoad(string json)
     {
         _playerPrefs = JsonUtility.FromJson<CloudPlayerPrefs>(json);
+
+        Debug.Log("Success Load!");
 
         IsSavesLoaded = true;
     }
@@ -111,6 +118,9 @@ public static class Saves
     private static void OnErrorLoad(string message)
     {
         LoadFromPrefs();
+
+        Debug.Log(message);
+
     }
 
     public static void LoadFromPrefs()
@@ -119,7 +129,7 @@ public static class Saves
             _playerPrefs = JsonUtility.FromJson<CloudPlayerPrefs>(PlayerPrefs.GetString("Saves"));
         else
             _playerPrefs = new CloudPlayerPrefs();
-        
+
         IsSavesLoaded = true;
     }
 }

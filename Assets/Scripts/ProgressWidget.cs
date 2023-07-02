@@ -24,6 +24,13 @@ public class ProgressWidget : MonoBehaviour
     private int _handlingLevel = 0;
     private int _speedLevel = 0;
 
+    private void Awake()
+    {
+        _accuracyLevel = Saves.Load("Accuracy", _accuracyLevel);
+        _handlingLevel = Saves.Load("Handling", _handlingLevel);
+        _speedLevel = Saves.Load("Speed", _speedLevel);
+    }
+
     private void Start()
     {
         UpdateCharactreristics();
@@ -61,6 +68,8 @@ public class ProgressWidget : MonoBehaviour
 
             _accuracyLevel++;
 
+            Saves.Save("Accuracy", _accuracyLevel);
+
             if (_accuracyLevel >= _accuracyUpgradeProgress.GetMaxLevel())
             {
                 _costAccuracyUpgradeView.SetValue("-");
@@ -82,6 +91,8 @@ public class ProgressWidget : MonoBehaviour
 
             _handlingLevel++;
 
+            Saves.Save("Handling", _handlingLevel);
+
             if (_handlingLevel >= _handlingUpgradeProgerss.GetMaxLevel())
             {
                 _costHandlingUpgradeView.SetValue("-");
@@ -102,6 +113,9 @@ public class ProgressWidget : MonoBehaviour
             _speedSlider.value = _characteristics.Speed;
 
             _speedLevel++;
+
+            Saves.Save("Speed", _speedLevel);
+
             if (_speedLevel >= _speedUpgradeProgress.GetMaxLevel())
             {
                 _costSpeedUpgradeView.SetValue("-");

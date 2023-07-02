@@ -16,12 +16,12 @@ public class EnemyDribbleState : EnemyState
     private void Awake()
     {
         _movement = GetComponent<CreatureMovement>();
-        _speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
     private void OnEnable()
     {
         Animator?.SetBool(Constants.IsDribbleKey, true);
+        _speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
     private void Update()

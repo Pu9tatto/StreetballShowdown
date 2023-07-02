@@ -12,7 +12,6 @@ public class EnemyMoveState : EnemyState
     private void Awake()
     {
         _movement = GetComponent<CreatureMovement>();
-        Speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
     private void Update()
@@ -26,6 +25,7 @@ public class EnemyMoveState : EnemyState
     private void OnEnable()
     {
         Animator?.SetBool(Constants.IsDribbleKey, false);
+        Speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
     private void OnDisable()

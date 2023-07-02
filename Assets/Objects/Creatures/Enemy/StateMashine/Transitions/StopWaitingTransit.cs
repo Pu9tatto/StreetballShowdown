@@ -13,13 +13,9 @@ public class StopWaitingTransit : Transition
 
     protected override void OnEnable()
     {
+        CalculateTimeForWait();
         base.OnEnable();
         _currentTime = _timeForWait;
-    }
-
-    private void Awake()
-    {
-        CalculateTimeForWait();
     }
 
     private void Update()

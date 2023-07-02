@@ -9,4 +9,9 @@ public class EnemyCharacteristics : MonoBehaviour
     public float GetAccuracy() => _characteristics.Accuracy;
 
     public float GetHandling() => _characteristics.Handling;
+
+    public void SetCharacteristics(Characteristics characteristics)
+    {
+        _characteristics = characteristics;
+    }
 }

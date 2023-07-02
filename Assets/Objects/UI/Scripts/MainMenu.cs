@@ -18,6 +18,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(Constants.DuelSceneName);
     }
 
+    public void InvokeTournament()
+    {
+        SceneManager.LoadScene(Constants.TournamentSceneName);
+    }
+
     public void ExitGame()
     {
         Application.Quit();

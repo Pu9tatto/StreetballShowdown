@@ -3,10 +3,12 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
+    [SerializeField] private Vector3 _startPosition;
 
     private State _currentState;
-
+    
     public State Current => _currentState;
+
 
     private void Start()
     {
@@ -24,7 +26,7 @@ public class StateMachine : MonoBehaviour
             Transit(nextState);
     }
 
-    private void Reset()
+    public void Reset()
     {
         _currentState = _firstState;
 
@@ -32,6 +34,9 @@ public class StateMachine : MonoBehaviour
         {
             _currentState.Enter();
         }
+
+        transform.position = _startPosition;
+
     }
 
     private void Transit(State nextState)

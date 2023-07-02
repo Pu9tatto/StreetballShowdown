@@ -681,7 +681,6 @@ GameObject:
   - component: {fileID: 7202707150900659419}
   - component: {fileID: 7202707150900659418}
   - component: {fileID: 7202707150900659417}
-  - component: {fileID: 7202707150900659422}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -788,8 +787,6 @@ MonoBehaviour:
   - {fileID: 0}
   _throwHewight: 5
   _throwSpeed: 1
-  _minRateForGoal: 0.25
-  _maxRateForGoal: 0.74
 --- !u!114 &4629218809392293102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,7 +817,6 @@ MonoBehaviour:
   - {fileID: 7202707150900659395}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 4
 --- !u!114 &7202707150900659395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,7 +850,6 @@ MonoBehaviour:
   - {fileID: 7202707150900659396}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 2
   _isRunAway: 0
 --- !u!114 &7202707150900659396
 MonoBehaviour:
@@ -891,6 +886,7 @@ MonoBehaviour:
   _jumpHeight: 1
   _jumpDuration: 1.36
   _moveTransit: {fileID: 7202707150900659398}
+  _waitPreapreThrow: 0
 --- !u!114 &7202707150900659398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,7 +917,6 @@ MonoBehaviour:
   - {fileID: 7202707150900659419}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 4
 --- !u!114 &7202707150900659419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +950,6 @@ MonoBehaviour:
   - {fileID: 7202707150900659417}
   _ball: {fileID: 0}
   _goalPoint: {fileID: 0}
-  _speed: 2
   _isRunAway: 1
 --- !u!114 &7202707150900659417
 MonoBehaviour:
@@ -970,22 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 7202707150900659394}
-  _distanceForRunAway: 6.75
   _goalPoint: {fileID: 0}
---- !u!114 &7202707150900659422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4629218809401775936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb5ef4b16da3434686c655ff3e824ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ballThrower: {fileID: 7202707150900659397}
-  _movement: {fileID: 7202707150900659393}
 --- !u!1 &4629218809401775938
 GameObject:
   m_ObjectHideFlags: 0

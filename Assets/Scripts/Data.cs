@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Agava.YandexGames;
 
 public class Data : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class Data : MonoBehaviour
 
     public event UnityAction<int> GoldChanged;
 
-    private int _gold = 0;
+    private int _gold;
 
     public int Gold => _gold;
 
@@ -21,10 +21,16 @@ public class Data : MonoBehaviour
         else if (_instance == this)
             Destroy(gameObject);
 
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnEnable()
+    {
         _gold = Saves.Load("Gold", _gold);
 
-        DontDestroyOnLoad(gameObject);
+        Console.WriteLine("Gold = " + _gold);
 
+        GoldChanged?.Invoke(_gold);
     }
 
     public void AddGold(int value)
@@ -42,7 +48,7 @@ public class Data : MonoBehaviour
             _gold -= value;
 
             GoldChanged?.Invoke(_gold);
-
+            Saves.Save("Gold", _gold);
 
             return true;
         }
@@ -53,5 +59,6 @@ public class Data : MonoBehaviour
     [ContextMenu("ClearSaves")]
     private void ClearSaves()
     {
+        Saves.Save("Gold", 0);
     }
 }
