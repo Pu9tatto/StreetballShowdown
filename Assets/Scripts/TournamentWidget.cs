@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TournamentWidget : MonoBehaviour
@@ -19,6 +20,14 @@ public class TournamentWidget : MonoBehaviour
     [SerializeField] private TMP_Text _modeName;
     [SerializeField] private TMP_Text _modeNameInStartWindow;
 
+    [SerializeField] private string _finalTextEn;
+    [SerializeField] private string _finalTextRu;
+    [SerializeField] private string _finalTextTr;
+
+    private const string _enLanguage = "en";
+    private const string _ruLanguage = "ru";
+    private const string _trLanguage = "tr";
+
     private string _finalText = "Final";
 
     private int _enemyLevel = 1;
@@ -28,6 +37,27 @@ public class TournamentWidget : MonoBehaviour
         Time.timeScale = 0.0f;
 
         Init();
+    }
+
+    private void Start()
+    {
+        string lang = Language.Instance.CurrentLanguage;
+
+        switch (lang)
+        {
+            case _enLanguage:
+                _finalText = _finalTextEn;
+                break;
+            case _ruLanguage:
+                _finalText = _finalTextRu;
+                break;
+            case _trLanguage:
+                _finalText = _finalTextTr;
+                break;
+            default:
+                _finalText = _finalTextEn;
+                break;
+        }
     }
 
     public void ContinueGame()

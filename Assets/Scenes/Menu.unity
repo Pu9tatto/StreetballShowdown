@@ -191,6 +191,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &187632305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187632307}
+  - component: {fileID: 187632306}
+  m_Layer: 0
+  m_Name: Language
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &187632306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187632305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07177180e69e94e4899b1ba570e54828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentLanguage: ru
+--- !u!4 &187632307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187632305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.083872676, y: 3.083134, z: 12.363054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &225907534
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +905,7 @@ GameObject:
   - component: {fileID: 621846569}
   - component: {fileID: 621846571}
   - component: {fileID: 621846570}
+  - component: {fileID: 621846572}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -984,6 +1030,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621846568}
   m_CullTransparentMesh: 1
+--- !u!114 &621846572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621846568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Speed
+  _ru: CkopocTb
+  _tr: "H\u0131z"
 --- !u!1 &905254090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1281,7 @@ GameObject:
   - component: {fileID: 1084234409}
   - component: {fileID: 1084234411}
   - component: {fileID: 1084234410}
+  - component: {fileID: 1084234412}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1344,6 +1406,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084234408}
   m_CullTransparentMesh: 1
+--- !u!114 &1084234412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084234408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Accuracy
+  _ru: MetkosTb
+  _tr: Kesinlik
 --- !u!1 &1189689765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,6 +2179,7 @@ GameObject:
   - component: {fileID: 1789047360}
   - component: {fileID: 1789047362}
   - component: {fileID: 1789047361}
+  - component: {fileID: 1789047363}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2228,6 +2306,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789047359}
   m_CullTransparentMesh: 1
+--- !u!114 &1789047363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789047359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Handling
+  _ru: KonTpoJlb
+  _tr: "Elle\xE7leme"
 --- !u!1 &1851683925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2686,7 @@ GameObject:
   - component: {fileID: 2159225711257512384}
   - component: {fileID: 2159225711257512386}
   - component: {fileID: 2159225711257512387}
+  - component: {fileID: 2159225711257512388}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2661,7 +2755,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 54
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2697,6 +2791,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2159225711257512388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159225711257512385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Twenty-one
+  _ru: 21
+  _tr: Yirmi-bir
 --- !u!224 &2159225712005630196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3046,7 +3155,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 54
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3093,6 +3202,7 @@ GameObject:
   - component: {fileID: 2617389563323141570}
   - component: {fileID: 2617389563323141568}
   - component: {fileID: 2617389563323141571}
+  - component: {fileID: 2617389563323141582}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3100,6 +3210,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2617389563323141582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617389563323141581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Tournament
+  _ru: TypHup
+  _tr: Turnuva
 --- !u!1 &3718896060961608881
 GameObject:
   m_ObjectHideFlags: 0
@@ -9253,7 +9378,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 54
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9300,6 +9425,7 @@ GameObject:
   - component: {fileID: 5520915399086805398}
   - component: {fileID: 5520915399086805396}
   - component: {fileID: 5520915399086805399}
+  - component: {fileID: 5520915399086805402}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9307,6 +9433,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5520915399086805402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520915399086805401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Training
+  _ru: TpeHupoBka
+  _tr: "E\u011Fitim"
 --- !u!1 &5536312228011164422
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,7 +9772,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 54
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9698,6 +9839,7 @@ GameObject:
   - component: {fileID: 8871173919063234113}
   - component: {fileID: 8871173919063234119}
   - component: {fileID: 8871173919063234112}
+  - component: {fileID: 8871173919063234120}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9713,6 +9855,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8871173919063234114}
   m_CullTransparentMesh: 0
+--- !u!114 &8871173919063234120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871173919063234114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824b55aea5d7d604fbe97cc1c18a900f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: 1 x 1
+  _ru: 1 x 1
+  _tr: 1 x 1
 --- !u!224 &8871173919236497896
 RectTransform:
   m_ObjectHideFlags: 0

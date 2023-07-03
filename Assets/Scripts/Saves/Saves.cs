@@ -64,11 +64,9 @@ public static class Saves
     {
         if (!_playerPrefs.HasKey(key))
         {
-            Console.WriteLine(key + "NOT founded");
             return defaultValue;
         }
 
-        Console.WriteLine("GoldLoad = " + _playerPrefs.GetInt(key));
         return _playerPrefs.GetInt(key);
     }
 
@@ -109,8 +107,6 @@ public static class Saves
     private static void OnSuccessLoad(string json)
     {
         _playerPrefs = JsonUtility.FromJson<CloudPlayerPrefs>(json);
-
-        Debug.Log("Success Load!");
 
         IsSavesLoaded = true;
     }
