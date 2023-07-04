@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Data : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Data : MonoBehaviour
 
     private int _gold;
 
+    private bool _isSoundOn;
+
+
+    public bool IsSoundOn => _isSoundOn;
     public int Gold => _gold;
 
     private void Awake()
@@ -26,11 +31,32 @@ public class Data : MonoBehaviour
 
     private void OnEnable()
     {
-        _gold = Saves.Load("Gold", _gold);
+        _gold = Saves.Load(Saves.Gold, _gold);
+
+        _isSoundOn = Saves.Load(Saves.IsSoundOn, _isSoundOn);
 
         Console.WriteLine("Gold = " + _gold);
 
         GoldChanged?.Invoke(_gold);
+    }
+
+    private void Start()
+    {
+        SetSound();
+    }
+
+    public void SoundOn()
+    {
+        _isSoundOn = true;
+        Saves.Save(Saves.IsSoundOn, _isSoundOn);
+        SetSound();
+    }
+
+    public void SoundOff()
+    {
+        _isSoundOn = false;
+        Saves.Save(Saves.IsSoundOn, _isSoundOn);
+        SetSound();
     }
 
     public void AddGold(int value)
@@ -38,7 +64,7 @@ public class Data : MonoBehaviour
         _gold += value;
         GoldChanged?.Invoke(_gold);
 
-        Saves.Save("Gold", _gold);
+        Saves.Save(Saves.Gold, _gold);
     }
 
     public bool TrySpendGold(int value)
@@ -48,7 +74,7 @@ public class Data : MonoBehaviour
             _gold -= value;
 
             GoldChanged?.Invoke(_gold);
-            Saves.Save("Gold", _gold);
+            Saves.Save(Saves.Gold, _gold);
 
             return true;
         }
@@ -56,9 +82,14 @@ public class Data : MonoBehaviour
         return false;
     }
 
+    private void SetSound()
+    {
+        AudioListener.volume = _isSoundOn ? 1f : 0f;
+    }
+
     [ContextMenu("ClearSaves")]
     private void ClearSaves()
     {
-        Saves.Save("Gold", 0);
+        Saves.Save(Saves.Gold, 0);
     }
 }

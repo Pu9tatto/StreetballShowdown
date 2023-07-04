@@ -11,6 +11,7 @@ public static class Saves
     public const string Handling = nameof(Handling);
     public const string Speed = nameof(Speed);
     public const string Level = nameof(Level);
+    public const string IsSoundOn = nameof(IsSoundOn);
 
     private static CloudPlayerPrefs _playerPrefs;
 
