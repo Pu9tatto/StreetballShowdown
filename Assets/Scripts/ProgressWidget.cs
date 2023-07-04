@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ProgressWidget : MonoBehaviour
@@ -19,6 +20,8 @@ public class ProgressWidget : MonoBehaviour
     [SerializeField] private Slider _accureateSlider;
     [SerializeField] private Slider _handlingSlider;
     [SerializeField] private Slider _speedSlider;
+
+    [SerializeField] private UnityEvent _sucsessLevelUp;
 
     private int _accuracyLevel = 0;
     private int _handlingLevel = 0;
@@ -68,6 +71,8 @@ public class ProgressWidget : MonoBehaviour
 
             _accuracyLevel++;
 
+            _sucsessLevelUp?.Invoke();
+
             Saves.Save("Accuracy", _accuracyLevel);
 
             if (_accuracyLevel >= _accuracyUpgradeProgress.GetMaxLevel())
@@ -91,6 +96,8 @@ public class ProgressWidget : MonoBehaviour
 
             _handlingLevel++;
 
+            _sucsessLevelUp?.Invoke();
+
             Saves.Save("Handling", _handlingLevel);
 
             if (_handlingLevel >= _handlingUpgradeProgerss.GetMaxLevel())
@@ -113,6 +120,8 @@ public class ProgressWidget : MonoBehaviour
             _speedSlider.value = _characteristics.Speed;
 
             _speedLevel++;
+
+            _sucsessLevelUp?.Invoke();
 
             Saves.Save("Speed", _speedLevel);
 

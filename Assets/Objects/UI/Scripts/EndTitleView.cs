@@ -17,35 +17,39 @@ public class EndTitleView : MonoBehaviour
     private TMP_Text _title;
     private string _winText;
     private string _loseText;
-
+    private string _lang;
     private void Awake()
     {
         _title = GetComponent<TMP_Text>();
     }
-    private void Start()
+
+    public void SetTitle(bool isWin)
     {
-        string lang = Language.Instance.CurrentLanguage;
-
-        switch (lang)
+        if(_lang == null)
         {
-            case _enLanguage:
-                _winText = _winTextEn;
-                _loseText = _loseTextEn;
-                break;
-            case _ruLanguage:
-                _winText = _winTextRu;
-                _loseText = _loseTextRu;
-                break;
-            case _trLanguage:
-                _winText = _winTextTr;
-                _loseText = _loseTextTr;
-                break;
-            default:
-                _winText = _winTextEn;
-                _loseText = _loseTextEn;
-                break;
-        }
-    }
+            _lang = Language.Instance.CurrentLanguage;
 
-    public void SetTitle(bool isWin) => _title.text = isWin ? _winText : _loseText;
+            switch (_lang)
+            {
+                case _enLanguage:
+                    _winText = _winTextEn;
+                    _loseText = _loseTextEn;
+                    break;
+                case _ruLanguage:
+                    _winText = _winTextRu;
+                    _loseText = _loseTextRu;
+                    break;
+                case _trLanguage:
+                    _winText = _winTextTr;
+                    _loseText = _loseTextTr;
+                    break;
+                default:
+                    _winText = _winTextEn;
+                    _loseText = _loseTextEn;
+                    break;
+            }
+        }
+
+        _title.text = isWin ? _winText : _loseText;
+    }
 }

@@ -101,8 +101,8 @@ MonoBehaviour:
   _targetRotation: {fileID: 0}
   _smoothSpeed: 0.125
   _offset: {x: 0, y: 5, z: -8}
-  _lookAtOffset: {x: 0, y: -20, z: 25.13}
+  _lookAtOffset: {x: 0, y: -20, z: 25}
   _minX: -7.5
   _maxX: 7.5
   _minZ: -8
-  _maxZ: -2
+  _maxZ: -4

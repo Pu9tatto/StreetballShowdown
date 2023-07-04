@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
@@ -7,6 +8,14 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float _throwBounced;
     [SerializeField] private BallOwner _owner = BallOwner.None;
+
+    [SerializeField] private UnityEvent _playDribbleSound;
+    [SerializeField] private UnityEvent _playGoalSound;
+    [SerializeField] private UnityEvent _playMissBasketSound;
+    [SerializeField] private UnityEvent _playMissTableSound;
+    [SerializeField] private UnityEvent _playTackleSound;
+
+
 
     private float[] _dribblePoints = new float[2];
     private int currentWaypointIndex = 0;
@@ -41,7 +50,7 @@ public class Ball : MonoBehaviour
     {
         if (_owner == BallOwner.Player)
             _owner = BallOwner.Enemy;
-        else if( _owner == BallOwner.Enemy)
+        else if (_owner == BallOwner.Enemy)
             _owner = BallOwner.Player;
     }
 
@@ -56,11 +65,11 @@ public class Ball : MonoBehaviour
         StartState(PatrolCoroutine());
     }
 
-    public void StartThrow(Vector3 endPoint, float height, float speed, float throwDistance)
+    public void StartThrow(Vector3 endPoint, float height, float speed, float throwDistance, ThrowResult throwResult = ThrowResult.Tackle)
     {
         _throwDistance = throwDistance;
         Vector3 startPoint = transform.position;
-        StartState(ThrowCoroutin(startPoint, endPoint, height, speed));
+        StartState(ThrowCoroutin(startPoint, endPoint, height, speed, throwResult));
     }
 
     private void MakeNonKinematic()
@@ -69,7 +78,7 @@ public class Ball : MonoBehaviour
         _collider.enabled = true;
     }
 
-    private IEnumerator ThrowCoroutin(Vector3 startPoint, Vector3 endPoint, float height, float speed)
+    private IEnumerator ThrowCoroutin(Vector3 startPoint, Vector3 endPoint, float height, float speed, ThrowResult throwResult)
     {
         float currentMoveProgress = 0.0f;
         float maxMoveProgress = 1.0f;
@@ -83,6 +92,22 @@ public class Ball : MonoBehaviour
             transform.position = position;
 
             yield return null;
+        }
+
+        switch (throwResult)
+        {
+            case ThrowResult.Goal:
+                _playGoalSound?.Invoke();
+                break;
+            case ThrowResult.TableMiss:
+                _playMissTableSound?.Invoke();
+                break;
+            case ThrowResult.BasketMiss:
+                _playMissBasketSound.Invoke();
+                break;
+            case ThrowResult.Tackle:
+                _playTackleSound?.Invoke();
+                break;
         }
 
         MakeNonKinematic();
@@ -113,6 +138,9 @@ public class Ball : MonoBehaviour
             }
 
             currentWaypointIndex = (currentWaypointIndex + 1) % _dribblePoints.Length;
+
+            if (currentWaypointIndex == 0)
+                _playDribbleSound?.Invoke();
 
             yield return null;
         }
@@ -145,4 +173,12 @@ public class Ball : MonoBehaviour
         Player,
         Enemy
     }
+
+}
+public enum ThrowResult
+{
+    Tackle,
+    Goal,
+    BasketMiss,
+    TableMiss
 }

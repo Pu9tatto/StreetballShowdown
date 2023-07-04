@@ -49,13 +49,25 @@ public class PlayerBallThrower : BallThrower
         CalculateNecassaryForce();
 
         if (_throwPower > _maxNecassaryForce)
+        {
+            throwResult = ThrowResult.TableMiss;
             return OverpowerMissPoints[Random.Range(0, OverpowerMissPoints.Length)];
+        }
         else if (_throwPower < _minNecassaryForce)
+        {
+            throwResult = ThrowResult.BasketMiss;
             return UnderpowerMissPoints[Random.Range(0, UnderpowerMissPoints.Length)];
+        }
         else if (_throwAngle < _allowableAngle)
+        {
+            throwResult = ThrowResult.Goal;
             return GoalPoint;
+        }
         else
+        {
+            throwResult = ThrowResult.TableMiss;
             return _missPoints[Random.Range(0, _missPoints.Length)]; 
+        }
     }
 
     protected override void CalculateDistance() => Distance = _throwDirection.magnitude;

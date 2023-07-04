@@ -13,6 +13,7 @@ public class BallThrower : MonoBehaviour
     [SerializeField] private float _throwSpeed;
 
     public event UnityAction<bool> IsPickedBall;
+    protected ThrowResult throwResult;
     protected Ball Ball;
     protected float Distance;
 
@@ -53,7 +54,7 @@ public class BallThrower : MonoBehaviour
 
             _aimPoint = CalculateThrowPoint();
 
-            Ball.StartThrow(_aimPoint.transform.position, _throwHewight, _throwSpeed, Distance);
+            Ball.StartThrow(_aimPoint.transform.position, _throwHewight, _throwSpeed, Distance, throwResult);
 
             Ball = null;
 

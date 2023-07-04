@@ -1251,10 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63992595b33f97d4dbe7114116a8ec0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characteristics:
-    _speed: 5
-    _accuracy: 0
-    _handling: 0
+  _characteristics: {fileID: 11400000, guid: f00f478f5f3ba0046b56f450b72058c0, type: 2}
 --- !u!114 &4417973446191222211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,15 +1309,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _allowableAngle: 10
-  _minDistanceForLongThrow: 6.75
-  _minDistanceForMiddleThrow: 4
   _necessaryForceForLongThrow: 0.85
-  _necessaryForceForMiddleThrow: 0.6
-  _necessaryForceForCloseThrow: 0.25
-  _permissibleVariationForLongThrow: 0.14
-  _permissibleVariationForMiddleThrow: 0.2
-  _permissibleVariationForCloseThrow: 0.26
+  _necessaryForceForMiddleThrow: 0.5
+  _necessaryForceForCloseThrow: 0.2
 --- !u!114 &3877048640053125973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firstState: {fileID: 3877048640053125974}
+  _startPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3877048640053125974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,7 +1341,6 @@ MonoBehaviour:
   Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125970}
-  _speed: 6
 --- !u!114 &3877048640053125970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,7 +1372,6 @@ MonoBehaviour:
   Animator: {fileID: 3877048640062509260}
   transitions:
   - {fileID: 3877048640053125980}
-  _speed: 5
   _goalPoint: {fileID: 0}
 --- !u!114 &3877048640053125980
 MonoBehaviour:
