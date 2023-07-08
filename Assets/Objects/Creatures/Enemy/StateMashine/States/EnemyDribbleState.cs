@@ -24,6 +24,11 @@ public class EnemyDribbleState : EnemyState
         _speed = GetComponent<EnemyCharacteristics>().GetSpeed();
     }
 
+    private void OnDisable()
+    {
+        Animator?.SetFloat(Constants.VelocityKey, 0);
+    }
+
     private void Update()
     {
         SetDirection();

@@ -24,7 +24,7 @@ public class DificultSelector : MonoBehaviour
     [SerializeField] private RewardWidget _rewardWidget;
 
     private Data _data;
-    private int _winRewardModify = 2;
+    private int _winRewardModify = 3;
 
     private void Awake()
     {

@@ -18,5 +18,4 @@ public class DuelScoreCounter : ScoreCounter
     }
 
     private void OnSetAttacker(bool isPlayer) => IsPlayerAttack = isPlayer;
-
 }

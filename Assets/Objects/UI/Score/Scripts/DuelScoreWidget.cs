@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DuelScoreWidget : ScoreWidget
 {
-    [SerializeField] private RewardWidget _rewardWidget;
+    [SerializeField] protected IRewardWidget _rewardWidget;
     [SerializeField] private int _gameOverScore = 11;
     [SerializeField] private IntValueViewer _enemyTextView;
-    [SerializeField] private EndTitleView _title;
+    [SerializeField] protected EndTitleView _title;
     [Header("Timer")]
     [SerializeField] private int _fullSecondsTime = 180;
     [SerializeField] private TimerView _timerView;
@@ -19,7 +19,7 @@ public class DuelScoreWidget : ScoreWidget
         base.Awake();
         _enemyScore = 0;
     }
-    private void Start()
+    protected virtual void Start()
     {
         StartCoroutine(StartTimer(_fullSecondsTime));
     }
@@ -69,7 +69,7 @@ public class DuelScoreWidget : ScoreWidget
     {
         base.FinishGame(isWin);
         _title.SetTitle(isWin);
-        _rewardWidget.Reward(isWin);
+        _rewardWidget?.Reward(isWin);
     }
 
     private IEnumerator StartTimer(int fullSecondsTime)

@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 3648022781010831769}
   - component: {fileID: 3648022781010831717}
   - component: {fileID: 3648022781010831718}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: TournamentEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be5550b034c5b74d839c9386881644a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstState: {fileID: 1255113838313146798}
+  _firstState: {fileID: 3648022781010831719}
+  _startPosition: {x: 0, y: 0, z: 3}
 --- !u!114 &1255113838313146798
 MonoBehaviour:
   m_ObjectHideFlags: 0

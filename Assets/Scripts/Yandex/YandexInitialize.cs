@@ -1,23 +1,10 @@
 using Agava.YandexGames;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class YandexInitialize : MonoBehaviour
 {
-    //private event Action _nextScene;
-
-    //private void OnEnable()
-    //{
-    //    _nextScene += LoadScene;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _nextScene -= LoadScene;
-    //}
-
     private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;

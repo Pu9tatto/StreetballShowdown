@@ -4,6 +4,8 @@ public class FreeKick : MonoBehaviour
 {
     [SerializeField] private Transform[] _freeKickPoints2Points;
     [SerializeField] private Transform[] _freeKickPoints3Points;
+    [SerializeField] private Transform[] _ballPointsAfterGoal;
+
 
     private Transform[] _playerFreeKickPoints;
     private Transform[] _enemyFreeKickPoints;
@@ -24,6 +26,14 @@ public class FreeKick : MonoBehaviour
             _freeKickPoint = _enemyFreeKickPoints[Random.Range(0, _freeKickPoints2Points.Length)].position;
 
         ball.transform.position = _freeKickPoint;
+        ball.StopVelosity();
+    }
+
+    public void TransformBallAfterGoal(Ball ball)
+    {
+        Vector3 transform = _ballPointsAfterGoal[Random.Range(0, _ballPointsAfterGoal.Length)].position;
+
+        ball.transform.position = transform;
         ball.StopVelosity();
     }
 

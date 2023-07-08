@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Sounds : MonoBehaviour
 {
-
     private void OnEnable()
     {
         WebApplication.InBackgroundChangeEvent += OnInBackgroundChange;
@@ -18,7 +17,6 @@ public class Sounds : MonoBehaviour
     {
         if(Data.Instance.IsSoundOn == false) return;
 
-        AudioListener.pause = inBackground;
         AudioListener.volume = inBackground ? 0f : 1f;
     }
 }

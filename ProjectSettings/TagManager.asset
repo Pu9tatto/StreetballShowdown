@@ -14,8 +14,8 @@ TagManager:
   - Ball
   - Player
   - UnCollidedPlayer
-  - 
-  - 
+  - Obstackle
+  - Enemy
   - 
   - 
   - 

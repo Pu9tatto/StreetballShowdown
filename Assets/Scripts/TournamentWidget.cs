@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TournamentWidget : MonoBehaviour
@@ -31,6 +31,8 @@ public class TournamentWidget : MonoBehaviour
     private string _finalText = "Final";
 
     private int _enemyLevel = 1;
+
+    //public event UnityAction<int> EnemyLevelChanged;
 
     private void Awake()
     {
@@ -69,6 +71,14 @@ public class TournamentWidget : MonoBehaviour
     {
         ResetLevel();
 
+        Saves.Save(Saves.IsCanRestartTournament, true);
+
+        Data.Instance.ResetLastTournamentLevel();
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Saves.Save(Saves.IsCanRestartTournament, true);
+#endif
+
         SetDificult();
     }
 
@@ -77,8 +87,11 @@ public class TournamentWidget : MonoBehaviour
         if (_enemyLevel < _characteristics.Count)
         {
             _enemyLevel++;
+
+            Console.WriteLine("Next LEvel LEvel = " + _enemyLevel);
+
 #if UNITY_WEBGL && !UNITY_EDITOR
-        Saves.Save("Level", _enemyLevel);
+        Saves.Save(Saves.Level, _enemyLevel);
 #endif
         }
 
@@ -101,7 +114,8 @@ public class TournamentWidget : MonoBehaviour
 
         CloseWindow();
     }
-    private void ResetLevel()
+
+    public void ResetLevel()
     {
         _enemyLevel = 1;
 
@@ -128,6 +142,8 @@ public class TournamentWidget : MonoBehaviour
             _continueButton.interactable = true;
 
         _nextLevelButton.interactable = true;
+
+        //EnemyLevelChanged?.Invoke(_enemyLevel);
 
         SetModeName();
     }

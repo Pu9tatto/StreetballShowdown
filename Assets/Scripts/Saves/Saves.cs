@@ -7,11 +7,14 @@ public static class Saves
     public static bool IsSavesLoaded { get; private set; }
 
     public const string Gold = nameof(Gold);
+    public const string Rate = nameof(Rate);
     public const string Accuracy = nameof(Accuracy);
     public const string Handling = nameof(Handling);
     public const string Speed = nameof(Speed);
     public const string Level = nameof(Level);
     public const string IsSoundOn = nameof(IsSoundOn);
+    public const string IsCanRestartTournament = nameof(IsCanRestartTournament);
+    public const string IsAutorize = nameof(IsAutorize);
 
     private static CloudPlayerPrefs _playerPrefs;
 
