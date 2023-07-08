@@ -865,7 +865,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.15
+  m_fontSize: 80.85
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -949,10 +949,10 @@ RectTransform:
   m_Father: {fileID: 9062914596538294188}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 450, y: 84}
+  m_AnchorMin: {x: 0.33800003, y: 0.92887366}
+  m_AnchorMax: {x: 0.863884, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -150, y: -9}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &397121180
 MonoBehaviour:
@@ -1885,7 +1885,7 @@ MonoBehaviour:
   _gameOverScore: 11
   _enemyTextView: {fileID: 2137487598}
   _title: {fileID: 68338912}
-  _fullSecondsTime: 0
+  _fullSecondsTime: 120
   _timerView: {fileID: 724414110}
   _winTournamentWindow: {fileID: 141527685}
   _tournamentWidget: {fileID: 9062914596538294193}
