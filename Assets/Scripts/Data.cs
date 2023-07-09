@@ -16,7 +16,10 @@ public class Data : MonoBehaviour
     private int _lastTournamentLevel = 1;
     private int _gold = 0;
 
+    private bool _isAdvertisingShow;
     private bool _isSoundOn;
+
+    public bool IsAdvertisingShow => _isAdvertisingShow;
 
     public bool IsSoundOn => _isSoundOn;
     public int Gold => _gold;
@@ -69,6 +72,16 @@ public class Data : MonoBehaviour
         _isSoundOn = false;
         Saves.Save(Saves.IsSoundOn, _isSoundOn);
         SetSound();
+    }
+
+    public void StartAdvetisingShow()
+    {
+        _isAdvertisingShow = true;
+    }
+
+    public void StopAdvertisingShow()
+    {
+        _isAdvertisingShow = false;
     }
 
     public void AddGold(int value)

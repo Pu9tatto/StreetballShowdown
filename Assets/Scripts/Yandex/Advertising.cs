@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Advertising : MonoBehaviour
 {
+    private Data _data;
+
     public event Action RewardedCallBack;
+
+    private void Awake()
+    {
+        _data = Data.Instance;
+    }
 
     public void OnShowInterstitialButtonClick()
     {
-        InterstitialAd.Show();
+        InterstitialAd.Show(OnOpenAdvertising, OnCloseAdvertising);
     }
 
     public void OnShowVideoButtonClick()
@@ -28,11 +35,18 @@ public class Advertising : MonoBehaviour
 
     private void OnOpenAdvertising()
     {
-        AudioListener.pause = true; 
+        AudioListener.pause = true;
+        _data.StartAdvetisingShow();
     }
 
     private void OnCloseAdvertising()
     {
         AudioListener.pause = false;
+        _data.StopAdvertisingShow();
+    }
+    private void OnCloseAdvertising(bool isClose)
+    {
+        AudioListener.pause = false;
+        _data.StopAdvertisingShow();
     }
 }
