@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07177180e69e94e4899b1ba570e54828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentLanguage: ru
+  _currentLanguage: tr
 --- !u!4 &187632307
 Transform:
   m_ObjectHideFlags: 0
@@ -571,19 +571,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829331967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1594284437}
-        m_TargetAssemblyTypeName: Data, Assembly-CSharp
-        m_MethodName: AddGold
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &398790234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7735,7 +7723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a7b72da182f6db64c880026ed0710320, type: 3}
+  m_Texture: {fileID: 2800000, guid: 45c3b564e9d8a594690205c1141d1411, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8064,7 +8052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _en: Handling
   _ru: KonTpoJlb
-  _tr: "Elle\xE7leme"
+  _tr: Ellecleme
 --- !u!1 &1851683925
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,6 +8217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10352b67762f1a3498a854752f136793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isStartShowInterstitialAd: 0
 --- !u!4 &1987547032
 Transform:
   m_ObjectHideFlags: 0
@@ -8857,18 +8846,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1987547031}
-        m_TargetAssemblyTypeName: Advertising, Assembly-CSharp
-        m_MethodName: OnShowInterstitialButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &2617389563265312233
 GameObject:
   m_ObjectHideFlags: 0
@@ -9019,18 +8996,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1987547031}
-        m_TargetAssemblyTypeName: Advertising, Assembly-CSharp
-        m_MethodName: OnShowInterstitialButtonClick
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15817,18 +15782,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1987547031}
-        m_TargetAssemblyTypeName: Advertising, Assembly-CSharp
-        m_MethodName: OnShowInterstitialButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!222 &5520915399086805396
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15979,7 +15932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _en: Training
   _ru: TpeHupoBka
-  _tr: "E\u011Fitim"
+  _tr: Egitim
 --- !u!1 &5536312228011164422
 GameObject:
   m_ObjectHideFlags: 0
@@ -16552,18 +16505,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1987547031}
-        m_TargetAssemblyTypeName: Advertising, Assembly-CSharp
-        m_MethodName: OnShowInterstitialButtonClick
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

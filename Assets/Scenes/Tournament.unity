@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.39248845, g: 0.44160613, b: 0.5660378, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 73324b55f67f54c7bbf43204788b8bbe, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0eb091fdd69ae5c44ae971869ca9e1c3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 73.3
+  m_fontSize: 70.25
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1709,6 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10352b67762f1a3498a854752f136793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isStartShowInterstitialAd: 1
 --- !u!4 &1282283119
 Transform:
   m_ObjectHideFlags: 0
@@ -2914,40 +2915,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.7001143
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 5.0187483
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.999998
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914449
+      value: -0.9686711
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13052616
+      value: -0.24765037
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.018011872
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0046049138
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15
+      value: 28.682
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 59.1
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3123,6 +3136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _endGameWindow: {fileID: 3345977591037179772}
   _pauseGameWindow: {fileID: 6059714107215212688}
+  _timeScale: 0
 --- !u!1 &2058887161
 GameObject:
   m_ObjectHideFlags: 0
@@ -26946,14 +26960,6 @@ PrefabInstance:
       value: -94.35498
       objectReference: {fileID: 0}
     - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2007183255}
@@ -26961,26 +26967,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2105789239}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 8300000, guid: 80c3faeb3bd66a44fb1169fd056844f4, type: 3}
-    - target: {fileID: 4953618993685822280, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6240067959962224681, guid: cc7453fc6cab3d44cb684ae78fb4cf7e, type: 3}
       propertyPath: m_IsActive
       value: 0

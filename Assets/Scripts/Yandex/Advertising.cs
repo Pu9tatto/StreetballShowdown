@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Advertising : MonoBehaviour
 {
+    [SerializeField] private bool _isStartShowInterstitialAd = true;
+
     private Data _data;
 
     public event Action RewardedCallBack;
 
+
     private void Awake()
     {
         _data = Data.Instance;
+    }
+    private void Start()
+    {
+        if (_isStartShowInterstitialAd)
+        {
+            OnShowInterstitialButtonClick();
+        }
     }
 
     public void OnShowInterstitialButtonClick()

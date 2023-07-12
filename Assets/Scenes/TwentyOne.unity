@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0eb091fdd69ae5c44ae971869ca9e1c3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -753,6 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10352b67762f1a3498a854752f136793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isStartShowInterstitialAd: 1
 --- !u!4 &567447132
 Transform:
   m_ObjectHideFlags: 0
@@ -1809,39 +1810,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.7001143
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 5.0187483
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.999998
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914449
+      value: -0.9686711
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13052616
+      value: -0.24765037
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.018011872
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0046049138
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15
+      value: 28.682
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 59.1
       objectReference: {fileID: 0}
     - target: {fileID: 8480105065866889164, guid: f8cfb84d7bfc1b041b5637b4c0c8c426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1925,6 +1926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _endGameWindow: {fileID: 329178052}
   _pauseGameWindow: {fileID: 1661287053230226057}
+  _timeScale: 0
 --- !u!1001 &2087460294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3529,7 +3531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2007183255}
         m_TargetAssemblyTypeName: EndGameWindowWidget, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: HidePauseGameWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

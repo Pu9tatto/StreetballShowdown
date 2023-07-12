@@ -1,5 +1,4 @@
 using Agava.YandexGames;
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,7 +23,6 @@ public class Data : MonoBehaviour
     public bool IsSoundOn => _isSoundOn;
     public int Gold => _gold;
     public int Rate => _rate;
-
     public int TournamentLevel => _tournamentLevel;
 
     public int LastTournamentLevel => _lastTournamentLevel;
